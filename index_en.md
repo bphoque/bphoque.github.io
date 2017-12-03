@@ -1,3 +1,0 @@
-# Xiaomi Home
-
-## It works !
