@@ -1,4 +1,5 @@
-# Présentation HomeBridge 
+Présentation HomeBridge
+=======================
 
 *Le plugin Homebridge* est un demon qui permet d’interagir avec un système domotique via l’assistant vocal Siri sous iOS. Le HomeKit a été introduit depuis iOS 8, mais est véritablement opérationnel depuis iOS 10 via l’application Maison. 
 
@@ -8,7 +9,8 @@ Le plugin Homebridge de Jeedom permet donc d’exposer des équipements Jeedom q
 
 >Homebridge n'est pas officiellement supporté par Apple. A tout moment Apple peut bloquer ce protocole.
 
-## Que peut-on faire avec HomeBridge ? 
+Que peut-on faire avec HomeBridge ?
+---------------------------------
 
 Homebridge peut s'utiliser avec une application compatible HomeKit ou avec l'assistant vocal Siri.
 
@@ -38,11 +40,13 @@ L'iPad et l'AppleTV (et bientôt le HomePod) peuvent servir de concentrateur. Po
 
 >HomeKit est le nom officiel du protocole développé par Apple. Homebridge est son équivalent Open Source développé par nfarina. Ce dernier a étendu le projet HAP-NodeJS qui est le moteur d'Homebridge.
 
-## Type d'accessoire compatible avec HomeKit (on les ajoutera peu à peu à HomeBridge)
+Type d'accessoire compatible avec HomeKit (on les ajoutera peu à peu à HomeBridge)
+-------------------------------
 
 ![cchb](../images/acchb.jpg)
 
-# Installation et activation du plugin Homebridge
+Installation et activation du plugin Homebridge
+==============================================
 
 Le plugin Homebridge doit être installé via le market Jeedom. *Le plugin App Mobile officiel n'est plus indispensable.*
 
@@ -54,7 +58,8 @@ Une fois le plugin installé, il suffit de l'activer en cliquant sur "Activer".
 
 ![activationHB](../images/activationHB.png)
 
-## Installation des dépendances
+Installation des dépendances
+----------------------------
 
 Les dépendances sont installées automatiquement par Jeedom dans les 5 min. Elles seront également réinstallées lors d'une mise à jour du plugin si besoin.
 
@@ -83,13 +88,15 @@ Une fois les dépendances installées, le démon se lance (dans les 5 min). Si l
 
 ![demon-homebridge](../images/demon-homebridge.png)
 
-## Mise à jour manuelle des dépendances
+Mise à jour manuelle des dépendances
+------------------------------------
 
 Pour mettre à jour manuellement les dépendances, il faut cliquer sur "Relancer".
 
 ![dependances-homebridge](../images/dependances-homebridge.png)
 
-## Fichiers LOG
+Fichiers LOG
+------------
 
 Les fichiers log permettent d'analyser pas à pas l'activité interne du processus et ses interactions avec son environnement.
 
