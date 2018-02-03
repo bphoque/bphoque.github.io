@@ -172,9 +172,11 @@ Afin d'ajouter un accessoire à Homebridge, il suffit de cocher la case "Envoyer
 
 >Si des modifications ont été faites, comme le changement du type générique, la modification d'un paramètre, l'ajout d'un accessoire il faut impérativement redémarrer le Démon pour la prise en compte dans Homebridge.
 
-### Configuration des types génériques #
+Configuration des types génériques
+=================================
 
-#### Généralités
+Généralités
+----------
 
 En cliquant sur l'équipement, les types génériques utilisés pour la communication entre votre Jeedom et Homebridge apparaissent.
 
@@ -201,7 +203,8 @@ Pour valider, il faut aller dans la configuration du plugin et relancer le démo
 
 ![demon-homebridge](../images/demon-homebridge.png)
 
-### Ajout de Jeedom dans HomeKit #
+Ajout de Jeedom dans HomeKit
+===========================
 
 Il existe plusieurs applications sur l'appstore compatibles HomeKit. L'application "Maison" d'Apple sera utilisée pour la rédaction de la documentation.
 
@@ -209,7 +212,8 @@ Il existe plusieurs applications sur l'appstore compatibles HomeKit. L'applicati
 
 Le pont peur être inclu manuellement en entrant le code PIN et en sélectionnant le pont ou automatiquement en scannant le QR code.
 
-#### Ajout du pont par QR code
+Ajout du pont par QR code
+-------------------------
 
 Pour ajouter le pont dans Homekit, il suffit de scanner le QR code avec l'application "Appareil photo". 
 
@@ -226,7 +230,8 @@ Une notification est affichée en haut de l'écran. Il suffit de cliquer dessus 
 
 Le pont est maintenant intégré dans Homekit.
 
-#### Ajout manuel du pont
+Ajout manuel du pont
+-------------------
 
 L'inclusion de Jeedom dans HomeKit, se fait en ouvrant l'application "Maison" et en cliquant sur "Ajouter un accessoire". 
 
@@ -258,7 +263,8 @@ Il faut sélectionner le pont à inclure.
 
 ![partage](../images/partage.png)
 
-#### Rangement des accessoires dans HomeKit
+Rangement des accessoires dans HomeKit
+====================================
 
 Les accessoires doivent être rangés correctement dans HomeKit. Il faudra créer des pièces pour y intégrer les accessoires.
 
