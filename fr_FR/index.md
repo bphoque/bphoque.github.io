@@ -192,7 +192,7 @@ Pour les informations :
 
 Pour les actions : 
 
-![ypegeaction](../images/typegeaction.png)
+![ypegeaction](../images/ypegeaction.png)
 
 
 include::configurationHomebridgeTypeGenerique.asciidoc[]
