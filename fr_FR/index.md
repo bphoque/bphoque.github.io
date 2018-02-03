@@ -39,6 +39,6 @@ L'iPad et l'AppleTV (et bientôt le HomePod) peuvent servir de concentrateur. Po
 
 >HomeKit est le nom officiel du protocole développé par Apple. Homebridge est son équivalent Open Source développé par nfarina. Ce dernier a étendu le projet HAP-NodeJS qui est le moteur d'Homebridge.
 
-===  Type d'accessoire compatible avec HomeKit (on les ajoutera peu à peu à HomeBridge)
+## Type d'accessoire compatible avec HomeKit (on les ajoutera peu à peu à HomeBridge)
 
 ![cchb](../images/acchb.jpg)
