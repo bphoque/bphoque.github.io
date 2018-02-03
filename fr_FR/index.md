@@ -112,4 +112,12 @@ Ces fichiers peuvent être nécessaires en cas de dysfonctionnement du plugin.
 
 ### titre 3.1 #
 
+Test
+
 ### titre 3.2 #
+
+test
+
+Installation des dépendances
+----------------------------
+
