@@ -294,5 +294,5 @@ Maintenant, il ne reste plus qu'à ranger tous les accessoires dans les différe
 
 *Les accessoires doivent être "rangés" un par un. Si il y en a beaucoup, cette partie prendra du temps*.
 
-La documentation complète de l'application "Maison" d'Apple est disponible https://support.apple.com/fr-fr/HT204893[ici].
+La documentation complète de l'application "Maison" d'Apple est disponible à cette adresse : https://support.apple.com/fr-fr/HT204893.
 
