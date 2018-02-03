@@ -228,6 +228,7 @@ Une notification est affichée en haut de l'écran. Il suffit de cliquer dessus 
 
 ![qr-code21](../images/qr-code21.png)
 
+
 Le pont est maintenant intégré dans Homekit.
 
 Ajout manuel du pont
