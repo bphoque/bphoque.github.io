@@ -18,9 +18,10 @@ Depuis iOS 10, l'application Maison (inclue par défaut avec iOS) permet le pilo
 
 ![cuisine-homekit](https://bphoque.github.io/images/cuisine-01.png) ![cuisine-homekit](https://bphoque.github.io/images/salon-01.png) ![cuisine-homekit](https://bphoque.github.io/images/salle-de-bain-01.png)
 
-Les équipements peuvent être classés par pièce. Il est également possible de mettre des accessoires en favoris sur la pages d'accueil. 
+Les équipements peuvent être classés par pièce. Il est également possible de mettre des accessoires en favoris sur la pages d'accueil. Une page spécifique indique l'ensemble des états des accessoires.
 
-![piece-homekit](https://bphoque.github.io/images/piece-homekit.jpg) ![piece-homekit](https://bphoque.github.io/images/accueil-01.png)
+![piece-homekit](https://bphoque.github.io/images/piece-homekit.jpg) ![piece-homekit](https://bphoque.github.io/images/accueil-01.png) ![etat](https://bphoque.github.io/images/etat.png)
+
 
 Beaucoup d'accessoires sont pris en charge.
 
