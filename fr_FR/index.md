@@ -16,7 +16,7 @@ Homebridge peut s'utiliser avec une application compatible HomeKit ou avec l'ass
 
 Depuis iOS 10, l'application Maison (inclue par défaut avec iOS) permet le pilotage d'équipements compatibles HomeKit. 
 
-![cuisine-homekit](https://bphoque.github.io/images/cuisine-homekit.jpg)
+![cuisine-homekit](https://bphoque.github.io/images/cuisine-01.png)
 
 Les équipements peuvent être classés par pièce.
 
