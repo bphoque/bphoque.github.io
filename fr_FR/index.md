@@ -28,7 +28,7 @@ Beaucoup d'accessoires sont pris en charge.
 
 Siri peut aussi interagir. Il répond aux questions : 
 
-![siri-01](../images/siri-01.jpg)
+![siri-01](https://bphoque.github.io/images/siri-01.jpg)
 
 Siri peut également faire des actions : 
 
@@ -39,11 +39,6 @@ L'iPad et l'AppleTV (et bientôt le HomePod) peuvent servir de concentrateur. Po
 
 
 >HomeKit est le nom officiel du protocole développé par Apple. Homebridge est son équivalent Open Source développé par nfarina. Ce dernier a étendu le projet HAP-NodeJS qui est le moteur d'Homebridge.
-
-Type d'accessoire compatible avec HomeKit (on les ajoutera peu à peu à HomeBridge)
--------------------------------
-
-![cchb](../images/acchb.jpg)
 
 Installation et activation du plugin Homebridge
 ==============================================
