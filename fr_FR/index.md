@@ -24,7 +24,7 @@ Les équipements peuvent être classés par pièce. Il est également possible d
 
 Beaucoup d'accessoires sont pris en charge.
 
-![garage-homekit](https://bphoque.github.io/images/acchb.jpg)
+![garage-homekit](https://bphoque.github.io/images/acchb.png)
 
 Siri peut aussi interagir. Il répond aux questions et fait des actions.  
 
