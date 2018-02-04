@@ -227,7 +227,7 @@ Une notification est affichée en haut de l'écran. Il suffit de cliquer dessus 
 >Comme expliqué plus haut dans la doc, Homebridge n'est pas reconnu officiellement par Apple. Un message indique que l'accessoire n'est pas certifié, il faut valider l'inclusion en cliquant sur "Poursuivre l'ajout".
 
 
-![qr-code1](../images/qr-code1.png)
+![qr-code21](../images/qr-code21.png)
 
 
 Le pont est maintenant intégré dans Homekit.
