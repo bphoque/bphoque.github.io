@@ -20,11 +20,11 @@ Depuis iOS 10, l'application Maison (inclue par défaut avec iOS) permet le pilo
 
 Les équipements peuvent être classés par pièce. Il est également possible de mettre des accessoires en favoris sur la pages d'accueil. 
 
-![piece-homekit](https://bphoque.github.io/images/piece-homekit.jpg)
+![piece-homekit](https://bphoque.github.io/images/piece-homekit.jpg) ![piece-homekit](https://bphoque.github.io/images/accueil-01.png)
 
 Beaucoup d'accessoires sont pris en charge.
 
-![garage-homekit](../images/garage-homekit.png)
+![garage-homekit](https://bphoque.github.io/images/acchb.jpg)
 
 Siri peut aussi interagir. Il répond aux questions : 
 
