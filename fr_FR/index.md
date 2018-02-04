@@ -3,7 +3,7 @@ Présentation HomeBridge
 
 *Le plugin Homebridge* est un demon qui permet d’interagir avec un système domotique via l’assistant vocal Siri sous iOS. Le HomeKit a été introduit depuis iOS 8, mais est véritablement opérationnel depuis iOS 10 via l’application Maison. 
 
-![homekit-logo](../images/homekit-logo.jpg)
+![homekit-logo](https://bphoque.github.io/images/homekit-logo.jpg)
 
 Le plugin Homebridge de Jeedom permet donc d’exposer des équipements Jeedom qui seront vus comme des accessoires compatibles au protocole *HomeKit*.
 
@@ -16,7 +16,7 @@ Homebridge peut s'utiliser avec une application compatible HomeKit ou avec l'ass
 
 Depuis iOS 10, l'application Maison (inclue par défaut avec iOS) permet le pilotage d'équipements compatibles HomeKit. 
 
-![cuisine-homekit](../images/cuisine-homekit.jpg)
+![cuisine-homekit](../images/cuisine-homekit.jpg) ![piece-homekit](../images/piece-homekit.jpg)
 
 Les équipements peuvent être classés par pièce.
 
