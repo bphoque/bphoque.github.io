@@ -26,13 +26,9 @@ Beaucoup d'accessoires sont pris en charge.
 
 ![garage-homekit](https://bphoque.github.io/images/acchb.jpg)
 
-Siri peut aussi interagir. Il répond aux questions : 
+Siri peut aussi interagir. Il répond aux questions et fait des actions.  
 
-![siri-01](https://bphoque.github.io/images/siri-01.jpg)
-
-Siri peut également faire des actions : 
-
-![siri-02](../images/siri-02.jpg)
+![siri-01](https://bphoque.github.io/images/siri-01.jpg) ![siri-02](https://bphoque.github.io/images/siri-02.jpg)
 
 HomeKit a l'avantage d'être utilisable à l'extérieur du domicile. Seule condition: il faut disposer d'un concentrateur. 
 L'iPad et l'AppleTV (et bientôt le HomePod) peuvent servir de concentrateur. Pour cela, ils doivent être connectés au même compte iCloud.
