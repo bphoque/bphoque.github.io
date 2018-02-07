@@ -43,7 +43,7 @@ Le plugin Homebridge doit être installé via le market Jeedom. *Le plugin App M
 
 *Pour les migrations depuis le plugin App Mobile officiel, il est important de ne pas désactiver le plugin App Mobile. Une rubrique "Migration depuis le plugin App Mobile" est disponible dans la documentation.* 
 
-![pluginHB](https://bphoque.github.io/images/pluginHB.png)
+![pluginHB](https://bphoque.github.io/images/pluginHB.png) ![pluginHB](https://bphoque.github.io/images/pluginHB2.png)
 
 Une fois le plugin installé, il suffit de l'activer en cliquant sur "Activer".
 
