@@ -109,11 +109,11 @@ Création du pont Homebridge
 
 Pour créer le pont Homebridge, il faut aller dans la rubrique "Gestion", et cliquer sur "Configuration".
 
-![gestion](../images/gestion.png)
+![gestion](https://bphoque.github.io/images/gestion.png)
 
 Pour créer le pont, il suffit de lui donner un nom et un code "PIN".
 
-![config-pluginhb](../images/config-pluginhb.png)
+![config-pluginhb](https://bphoque.github.io/images/config-pluginhb.png)
 
 * *Nom Homebridge* : Permet de nommer le pont Homebridge. 
 
@@ -152,11 +152,11 @@ Ajout des accessoires dans Homebridge
 
 Les équipements seront à ajouter manuellement. 
 
-![config-piece](../images/config-piece.png)
+![config-piece](https://bphoque.github.io/images/config-piece.png)
 
 Afin d'intégrer un accessoire dans Homebridge, il faut sélectionner la pièce où il se trouve.
 
-![choix-acc](../images/choix-acc.png)
+![choix-acc](https://bphoque.github.io/images/choix-acc.png)
 
 Afin d'ajouter un accessoire à Homebridge, il suffit de cocher la case "Envoyer à Homebridge". Pour sauvegarder, il suffit de cliquer sur la petite disquette verte.
 
