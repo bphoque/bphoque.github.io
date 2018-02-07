@@ -22,7 +22,6 @@ Les équipements peuvent être classés par pièce. Il est également possible d
 
 ![piece-homekit](https://bphoque.github.io/images/piece-homekit.jpg) ![piece-homekit](https://bphoque.github.io/images/accueil-01.png) ![etat](https://bphoque.github.io/images/etat.png)
 
-
 Beaucoup d'accessoires sont pris en charge.
 
 ![garage-homekit](https://bphoque.github.io/images/acchb.png)
@@ -44,18 +43,18 @@ Le plugin Homebridge doit être installé via le market Jeedom. *Le plugin App M
 
 *Pour les migrations depuis le plugin App Mobile officiel, il est important de ne pas désactiver le plugin App Mobile. Une rubrique "Migration depuis le plugin App Mobile" est disponible dans la documentation.* 
 
-![pluginHB](../images/pluginHB.png)
+![pluginHB](https://bphoque.github.io/images/pluginHB.png)
 
 Une fois le plugin installé, il suffit de l'activer en cliquant sur "Activer".
 
-![activationHB](../images/activationHB.png)
+![activationHB](https://bphoque.github.io/images/activationHB.png)
 
 Installation des dépendances
 ----------------------------
 
 Les dépendances sont installées automatiquement par Jeedom dans les 5 min. Elles seront également réinstallées lors d'une mise à jour du plugin si besoin.
 
-![installationDep](../images/installationDep.png)
+![installationDep](https://bphoque.github.io/images/installationDep.png)
 
 *Le temps d'installation des dépendances peut varier en fonction du matériel utilisé.*
 
