@@ -77,14 +77,14 @@ Les dépendances sont installées automatiquement par Jeedom dans les 5 min. Ell
 
 Une fois les dépendances installées, le démon se lance (dans les 5 min). Si le statut n'est pas sur "OK", il faut cliquer sur "(Re)Démarrer".
 
-![demon-homebridge](../images/demon-homebridge.png)
+![demon-homebridge](https://bphoque.github.io/images/demon-homebridge.png)
 
 Mise à jour manuelle des dépendances
 ------------------------------------
 
 Pour mettre à jour manuellement les dépendances, il faut cliquer sur "Relancer".
 
-![dependances-homebridge](../images/dependances-homebridge.png)
+![dependances-homebridge](https://bphoque.github.io/images/dependances-homebridge.png)
 
 Fichiers LOG
 ------------
@@ -93,7 +93,7 @@ Les fichiers log permettent d'analyser pas à pas l'activité interne du process
 
 Ces fichiers peuvent être nécessaires en cas de dysfonctionnement du plugin.
 
-![log](../images/log.png)
+![log](https://bphoque.github.io/images/log.png)
 
 * Homebridge : Historise toutes les communications avec le démon homebridge.
 
