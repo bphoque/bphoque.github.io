@@ -171,7 +171,7 @@ Généralités
 
 En cliquant sur l'équipement, les types génériques utilisés pour la communication entre votre Jeedom et Homebridge apparaissent.
 
-![typegen-1](../images/typegen-1.png)
+![typegen-1](https://bphoque.github.io/images/typegen-1.png)
 
 La majorité des types génériques est déjà renseignée. Dans certains cas, une configuration manuelle sera nécessaire (pour le plugin Virtuel par exemple).
 
@@ -179,14 +179,30 @@ Voici les types génériques disponibles :
 
 Pour les informations : 
 
-![typeginfo](../images/typeginfo.png)
+![typeginfo](https://bphoque.github.io/images/typeginfo.png)
 
 Pour les actions : 
 
-![ypegeaction](../images/ypegeaction.png)
+![ypegeaction](https://bphoque.github.io/images/ypegeaction.png)
 
 
-include::configurationHomebridgeTypeGenerique.asciidoc[]
+Lumière
+----------
+
+| Type générique  | Obligatoire | Valeurs possibles |
+|---------------|----------------|----------------|
+| Info/Lumière Etat (Binaire)   |   NON  |Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​) 0 = Eteint autre que 0 = Allumé
+| Row1 Cell1    |   Row1 Cell2   || Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+| Row1 Cell1    |   Row1 Cell2   |
+
 
 *Des exemples de configurations sont disponibles à la fin de la documentation*
 
