@@ -188,7 +188,7 @@ Pour les actions :
 
 Lumière
 ----------
------------------------------------------------------
+
 Type générique  | Obligatoire | Valeurs possibles |
 ---------------|:----------------:|----------------|
 |<br/>Info/Lumière Etat (Binaire)|<br/>`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé|
