@@ -189,8 +189,8 @@ Pour les actions :
 Lumière
 ----------
 
-Type générique  | Obligatoire | Valeurs possibles |
----------------|:----------------:|----------------|
+|Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
 |<br/>Info/Lumière Etat (Binaire)|<br/>`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé|
 |<br/><br/><br/>Info/Lumière Etat|<br/><br/><br/>`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
 |Action/Lumière Slider (Luminosité)|<br/>`Oui`|<br/>Réf. vers Lumière Etat|
