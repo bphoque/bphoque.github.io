@@ -191,11 +191,11 @@ Lumière
 -----------------------------------------------------
 Type générique  | Obligatoire | Valeurs possibles |
 ---------------|:----------------:|----------------|
-<br/>Info/Lumière Etat (Binaire)|<br/>`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé
-<br/><br/><br/>Info/Lumière Etat|<br/><br/><br/>`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
-Action/Lumière Slider (Luminosité)|<br/>`Oui`|<br/>Réf. vers Lumière Etat
-Action/Lumière Bouton On|<br/>`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon
-Action/Lumière Bouton Off|<br/>`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon
+|<br/>Info/Lumière Etat (Binaire)|<br/>`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé|
+|<br/><br/><br/>Info/Lumière Etat|<br/><br/><br/>`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
+|Action/Lumière Slider (Luminosité)|<br/>`Oui`|<br/>Réf. vers Lumière Etat|
+|Action/Lumière Bouton On|<br/>`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
+|Action/Lumière Bouton Off|<br/>`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
 | Row1 Cell1    |   Row1 Cell2   |
 | Row1 Cell1    |   Row1 Cell2   |
 | Row1 Cell1    |   Row1 Cell2   |
