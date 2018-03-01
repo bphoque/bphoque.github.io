@@ -191,8 +191,8 @@ Lumière
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Lumière Etat (Binaire)|<br/>`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé|
-|Info/Lumière Etat|<br/><br/>`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
+|Info/Lumière Etat (Binaire)|`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé|
+|Info/Lumière Etat|`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
 |Action/Lumière Slider (Luminosité)|`Oui`|Réf. vers Lumière Etat|
 |Action/Lumière Bouton On|`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
 |Action/Lumière Bouton Off|`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
