@@ -392,7 +392,7 @@ Maintenant, il ne reste plus qu'à ranger tous les accessoires dans les différe
 
 ![home-053](https://bphoque.github.io/images/home-053.jpg)
 
-*Les accessoires doivent être "rangés" un par un. Si il y en a beaucoup, cette partie prendra du temps*.
+**Les accessoires doivent être "rangés" un par un. Si il y en a beaucoup, cette partie prendra du temps**.
 
 La documentation complète de l'application "Maison" d'Apple est disponible à cette adresse : https://support.apple.com/fr-fr/HT204893.
 
@@ -412,4 +412,76 @@ Lors de l'installation du plugin Homebridge, tous les accessoires vont être ind
 ![migration1](https://bphoque.github.io/images/migration1.png)
 
 Dès que l'installation des dépendances est terminée, tous les accessoires seront de nouveau disponibles.
+
+Troubleshooting
+=================
+
+Support
+-------
+**Merci de passer par le forum, de créer *un* sujet par demande et de lire les autres sujets s'ils ressemblent au votre (ceux créés après la sortie de ce plugin, c'est logique :-))**
+
+Point important
+---------------
+
+>Les références vers l'état dans les actions sont primordiales !! Sinon pas de lien entre l'état et ses actions possibles.
+
+Pour un "virtuel" : 
+
+![plugnmobilesanshb](https://bphoque.github.io/images/reference-etat.png)
+
+Pour un accessoire physique (Dimmer 2 de Fibaro par exemple) : 
+
+![ref2.png](https://bphoque.github.io/images/ref2.png)
+
+FAQ
+----
+
+**-> Le pont Homebridge n'apparaît pas dans l'application Maison !**
+
+>Vérifiez que le statut du démon Homebridge est sur OK.
+
+![demon-homebridge.png](https://bphoque.github.io/images/demon-homebridge.png)
+
+>Pour inclure votre Jeedom dans HomeKit, via une application compatible (par exemple Maison ou Eve), vérifiez que votre appareil iOS est connecté au même réseau que votre Jeedom.
+
+![config-pluginhb](https://bphoque.github.io/images/config-pluginhb.png)
+
+**-> Le démon Homebridge ne veut pas démarrer !**
+
+>Vérifiez que vous disposez de la dernière version des dépendances. En cas de doute, il est possible de les réinstaller en cliquant sur "Relancer". Si la réinstallation des dépendances ne fonctionne pas ou indique une erreur dans le log des dépendances, cliquez sur "Réparer et Réinstaller".
+
+![dependances-homebridge](https://bphoque.github.io/images/dependances-homebridge.png)
+
+**-> Mon équipement n'apparaît pas dans Homebridge !**
+
+>Vérifiez que la case "Envoyer à Homebridge" est cochée dans la configuration du plugin Homebridge.
+
+**-> La case "Envoyer à Homebridge" est bien cochée mais mon équipement n'apparaît toujours pas !**
+
+>Vérifiez dans la configuration de votre équipement que celui-ci est activé, et dans une pièce.
+
+<br/>
+
+>Vérifiez que les types génériques sont bien configurés. Chaque équipement envoyé à Homebridge doit avoir au moins un type générique "Etat".
+
+![ypegelumi](https://bphoque.github.io/images/ypegelumi.png)
+
+**-> J'ai mon Homebridge qui n'exécute pas les commandes !**
+
+>Il faut bien mettre à jour le plugin App Mobile, puis dans la configuration des dépendances, il suffit de renseigner un utilisateur avec des droits d'exécution sur les commandes.
+
+**-> J'ai bien le retour d'état d'un équipement mais impossible de le piloter !**
+
+>Vérifiez que les types génériques sont bien configurés. Il doit y avoir une cohérence entre les types. Si vous avez le type "Info Lumière Etat", vérifiez que les actions sont de types "Action / Lumière Bouton On" etc... Voir aussi la référence à l'état (le point important ci-dessus)
+
+**-> Le message "sans réponse" apparaît dans l'application Maison ou Eve**
+
+![sans-reponse](https://bphoque.github.io/images/sans-reponse.png)
+
+1. Si vous n'avez pas de concentrateur HomeKit (iPad ou Apple TV), vérifiez que vous êtes connecté au même réseau que votre Jeedom. 
+2. Vérifiez que le démon est activé. Si ce n'est pas le cas, redémarrez le.
+3. Relancez votre box.
+4. Si malgré tout vous avez toujours ces états, lancez une réparation.
+
+>Beaucoup d'informations se trouvent dans les logs, le prochain chapitre vous expliquera comment les analyser.
 
