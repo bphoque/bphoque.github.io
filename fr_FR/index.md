@@ -396,3 +396,20 @@ Maintenant, il ne reste plus qu'à ranger tous les accessoires dans les différe
 
 La documentation complète de l'application "Maison" d'Apple est disponible à cette adresse : https://support.apple.com/fr-fr/HT204893.
 
+Migration depuis le plugin App Mobile
+=====================================
+
+Le nouveau plugin Homebridge importe automatiquement la configuration Homebridge du plugin App Mobile. Il n'y a aucune opération à faire. 
+
+Lorsque l'importation est terminée, la rubrique Homebridge disparait des paramètres du plugin App Mobile. 
+
+![plugnmobilesanshb](https://bphoque.github.io/images/plugnmobilesanshb.png)
+
+Homebridge est complètement désolidarisé du plugin App Mobile. Il fonctionne maintenant de manière autonome.
+
+Lors de l'installation du plugin Homebridge, tous les accessoires vont être indisponibles. C'est normal.
+
+![migration1](https://bphoque.github.io/images/migration1.png)
+
+Dès que l'installation des dépendances est terminée, tous les accessoires seront de nouveau disponibles.
+
