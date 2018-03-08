@@ -334,12 +334,9 @@ Le pont peur être inclu manuellement en entrant le code PIN et en sélectionnan
 Ajout du pont par QR code
 -------------------------
 
-Pour ajouter le pont dans Homekit, il suffit de scanner le QR code avec l'application "Appareil photo". 
+Pour ajouter le pont dans Homekit, il suffit de scanner le QR code avec l'application "Appareil photo".  Une notification est affichée en haut de l'écran. Il suffit de cliquer dessus et le pont est inclus automatiquement dans Homekit. 
 
 ![qr-code](https://bphoque.github.io/images/qr-code.png)
-
-Une notification est affichée en haut de l'écran. Il suffit de cliquer dessus et le pont est inclu automatiquement dans Homekit.
-
 ![qr-code1](https://bphoque.github.io/images/qr-code1.png)
 
 
