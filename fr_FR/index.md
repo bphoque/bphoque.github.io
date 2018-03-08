@@ -205,7 +205,7 @@ Lumière
 Prises
 --------
 
-Type générique  | Obligatoire | Valeurs possibles |
+|Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
 |Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
@@ -215,7 +215,7 @@ Type générique  | Obligatoire | Valeurs possibles |
 Volets
 --------
 
-Type générique  | Obligatoire | Valeurs possibles |
+|Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Volet Etat|`OUI`|0 = Fermé<br/>> 95 = Ouvert|
 |Action/Volet Bouton Monter|`Si Descendre`|Réf. vers Info/Volet Etat| 
@@ -236,7 +236,7 @@ N’existe pas en HomeKit
 Serrures
 --------
 
-Type générique  | Obligatoire | Valeurs possibles |
+|Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Serrure Etat|`OUI`|pas 1 = Non Sécurisée<br/>1 = Sécurisée|
 |Action/Serrure Bouton Ouvrir|`OUI`|Réf. vers Info/Serrure Etat| 
@@ -250,7 +250,7 @@ N’existe pas en HomeKit
 Thermostats
 -------------
 
-Type générique  | Obligatoire | Valeurs possibles |
+|Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Thermostat Etat (BINAIRE)|`NON`|0 = Eteint<br/>1 = Allumé|
 |Info/Thermostat Etat (HUMAIN)|`NON`|Générique (Eve Seulement)| 
@@ -267,7 +267,7 @@ Type générique  | Obligatoire | Valeurs possibles |
 Portails ou Garages
 --------------------
 
-Type générique  | Obligatoire | Valeurs possibles |
+|Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Portail état ouvrant<br/>Info/Garage état ouvrant<br/>(même traitement)|`OUI`|0 = Fermé<br/>252 = Fermeture en cours<br/>253 = Stoppé<br/>254 = Ouverture en cours<br/>255 = Ouvert<br/>(Configurable)|
 |Action/Portail ou garage bouton toggle|`Si seul`|Réf. vers Info/Portail état ouvrant<br/>ou<br/>Réf. vers Info/Garage état ouvrant| 
@@ -277,7 +277,7 @@ Type générique  | Obligatoire | Valeurs possibles |
 Haut-Parleurs (Eve Seulement)
 -----------------------------
 
-Type générique  | Obligatoire | Valeurs possibles |
+|Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Haut-Parleur Mute|`OUI`|1 = Pas de son<br/>0 = Son|
 |Action/Haut-Parleur Mute|`Si pas Toggle`|Réf. vers Info/Haut-Parleur Mute| 
@@ -289,7 +289,7 @@ Type générique  | Obligatoire | Valeurs possibles |
 Generic
 ----------
 
-Type générique  | Obligatoire | Valeurs possibles |
+|Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Puissance Electrique|`NON`|Watts|
 |Info/Consommation Electrique<br/>(cachée)|`NON`|KWh
