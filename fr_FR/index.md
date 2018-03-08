@@ -320,14 +320,14 @@ Generic
 
 Pour valider, il faut aller dans la configuration du plugin et relancer le démon Homebridge en cliquant sur "(Re)Démarrer".
 
-![demon-homebridge](../images/demon-homebridge.png)
+![demon-homebridge](https://bphoque.github.io/images/demon-homebridge.png)
 
 Ajout de Jeedom dans HomeKit
 ===========================
 
 Il existe plusieurs applications sur l'appstore compatibles HomeKit. L'application "Maison" d'Apple sera utilisée pour la rédaction de la documentation.
 
-![app-domicile](../images/app-domicile.jpg)
+![app-domicile](https://bphoque.github.io/images/app-domicile.jpg)
 
 Le pont peur être inclu manuellement en entrant le code PIN et en sélectionnant le pont ou automatiquement en scannant le QR code.
 
@@ -336,17 +336,17 @@ Ajout du pont par QR code
 
 Pour ajouter le pont dans Homekit, il suffit de scanner le QR code avec l'application "Appareil photo". 
 
-![qr-code](../images/qr-code.png)
+![qr-code](https://bphoque.github.io/images/qr-code.png)
 
 Une notification est affichée en haut de l'écran. Il suffit de cliquer dessus et le pont est inclu automatiquement dans Homekit.
 
-![qr-code1](../images/qr-code1.png)
+![qr-code1](https://bphoque.github.io/images/qr-code1.png)
 
 
 >Comme expliqué plus haut dans la doc, Homebridge n'est pas reconnu officiellement par Apple. Un message indique que l'accessoire n'est pas certifié, il faut valider l'inclusion en cliquant sur "Poursuivre l'ajout".
 
 
-![qr-code21](../images/qr-code21.png)
+![qr-code21](https://bphoque.github.io/images/qr-code21.png)
 
 
 Le pont est maintenant intégré dans Homekit.
@@ -356,33 +356,33 @@ Ajout manuel du pont
 
 L'inclusion de Jeedom dans HomeKit, se fait en ouvrant l'application "Maison" et en cliquant sur "Ajouter un accessoire". 
 
-![home-1](../images/home-1.jpg)
+![home-1](https://bphoque.github.io/images/home-1.jpg)
 
 
 >Dans l'exemple, le domicile s'appelle "Test". Son nom peut être modifié en allant dans les réglages de l'application.
 
 Il faut scanner le code PIN 
 
-![home-2](../images/home-2.jpg)
+![home-2](https://bphoque.github.io/images/home-2.jpg)
 
 
 >Le code PIN peut être également rentré manuellement en cliquant sur "Code absent ou impossible à scanner ?".
 
 Il faut sélectionner le pont à inclure.
 
-![home-3](../images/home-3.jpg)
+![home-3](https://bphoque.github.io/images/home-3.jpg)
 
 
 >Comme expliqué plus haut dans la doc, Homebridge n'est pas reconnu officiellement par Apple. Un message indique que l'accessoire n'est pas certifié, il faut valider l'inclusion en cliquant sur "Poursuivre l'ajout".
 
-![home-4](../images/home-4.png)
+![home-4](https://bphoque.github.io/images/home-4.png)
 
 *Le pont Jeedom est maintenant intégré à HomeKit.*
 
 
 >Il n'est pas possible d'inclure le pont Jeedom sur plusieurs appareils IOS. Pour utiliser Homebridge sur plusieurs appareils IOS, il suffit de partager le domicile en suivant la procédure suivante :
 
-![partage](../images/partage.png)
+![partage](https://bphoque.github.io/images/partage.png)
 
 Rangement des accessoires dans HomeKit
 ====================================
@@ -394,24 +394,24 @@ Les accessoires doivent être rangés correctement dans HomeKit. Il faudra crée
 
 Le premier accessoire à "ranger" est le pont Jeedom. 
 
-![home-5](../images/home-5.jpg)
+![home-5](https://bphoque.github.io/images/home-5.jpg)
 
 Il faut sélectionner la pièce où sera installé le pont. Si elle n'existe pas, il faudra la créer en cliquant sur "Créer".
 
-![home-05](../images/home-05.jpg)
+![home-05](https://bphoque.github.io/images/home-05.jpg)
 
 Définir le nom de la nouvelle pièce. Il est également possible de lui attribuer un fond d'écran dédié. Pour finaliser la création de la pièce, il faut cliquer sur "Enregistrer".
 
-![home-051](../images/home-051.jpg)
+![home-051](https://bphoque.github.io/images/home-051.jpg)
 
 Maintenant, il ne reste plus qu'à ranger tous les accessoires dans les différentes pièces.
 
-![home-052](../images/home-052.jpg)
+![home-052](https://bphoque.github.io/images/home-052.jpg)
 
 
 >La fonction "Inclure dans les favoris" permet d'afficher l'accessoire dans la page principale de l'application
 
-![home-053](../images/home-053.jpg)
+![home-053](https://bphoque.github.io/images/home-053.jpg)
 
 *Les accessoires doivent être "rangés" un par un. Si il y en a beaucoup, cette partie prendra du temps*.
 
