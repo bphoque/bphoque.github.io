@@ -381,7 +381,6 @@ Le premier accessoire à "ranger" est le pont Jeedom. Il faut sélectionner la p
 
 ![home-5](https://bphoque.github.io/images/home-5.jpg)
 ![home-05](https://bphoque.github.io/images/home-05.jpg)
-
 ![home-051](https://bphoque.github.io/images/home-051.jpg)
 
 Maintenant, il ne reste plus qu'à ranger tous les accessoires dans les différentes pièces.
