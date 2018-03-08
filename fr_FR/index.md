@@ -193,16 +193,128 @@ Lumière
 |---------------|:----------------:|----------------|
 |Info/Lumière Etat (Binaire)|`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé|
 |Info/Lumière Etat|`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
-|Action/Lumière Slider (Luminosité)|`Oui`|Réf. vers Lumière Etat|
-|Action/Lumière Bouton On|`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
-|Action/Lumière Bouton Off|`Oui`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
-| Row1 Cell1    |   Row1 Cell2   |
-| Row1 Cell1    |   Row1 Cell2   |
-| Row1 Cell1    |   Row1 Cell2   |
-| Row1 Cell1    |   Row1 Cell2   |
-| Row1 Cell1    |   Row1 Cell2   |
-| Row1 Cell1    |   Row1 Cell2   |
+|Action/Lumière Slider (Luminosité)|`OUI`|Réf. vers Lumière Etat|
+|Action/Lumière Bouton On|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
+|Action/Lumière Bouton Off|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
+|Info/Lumière Couleur| `NON` |Format #RRGGBB
+|Action/Lumière Couleur|   `Si Info/Lumière Couleur `|Réf. vers Info/Lumière Couleur
+|Info/Lumière Température Couleur|`NON`|Réf. vers<br/>- Info/Lumière Température Couleur<br/>(Eve Seulement)
+|Action/Lumière Toggle|  `NON Utilisé`  |N/A
+| Action/Lumière Mode|  `NON Utilisé` |N/A
 
+Prises
+--------
+
+Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
+|Action/Prise Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
+|Action/Prise Slider|`NON Utilisé`|N/A
+
+Volets
+--------
+
+Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Volet Etat|`OUI`|0 = Fermé<br/>> 95 = Ouvert|
+|Action/Volet Bouton Monter|`Si Descendre`|Réf. vers Info/Volet Etat| 
+|Action/Volet Bouton Descendre|`Si Monter`|Réf. vers Info/Volet Etat|
+|Action/Volet Bouton Stop|`NON Utilisé`|N/A
+|Action/Volet Bouton Slider|`Si seul`|Réf. vers Info/Volet Etat
+
+Volets BSO
+----------
+
+Pas encore supportés
+
+Chauffage fil pilote
+---------------------
+
+N’existe pas en HomeKit
+
+Serrures
+--------
+
+Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Serrure Etat|`OUI`|pas 1 = Non Sécurisée<br/>1 = Sécurisée|
+|Action/Serrure Bouton Ouvrir|`OUI`|Réf. vers Info/Serrure Etat| 
+|Action/Serrure Bouton Fermer|`OUI`|Réf. vers Info/Serrure Etat| 
+
+Sirènes
+-------
+
+N’existe pas en HomeKit
+
+Thermostats
+-------------
+
+Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Thermostat Etat (BINAIRE)|`NON`|0 = Eteint<br/>1 = Allumé|
+|Info/Thermostat Etat (HUMAIN)|`NON`|Générique (Eve Seulement)| 
+|Info/Thermostat Mode|`OUI si associé mode homekit`|Générique (Eve Seulement)| 
+|Action/Thermostat Mode|`NON`|Peut être associé mode homekit|
+|Info/Thermostat Température Extérieur|`NON utilisé`|N/A
+|Info/Thermostat Température ambiante|`NON`|-50 → 100| 
+|Info/Thermostat Consigne|`OUI`|10 → 38| 
+|Action/Thermostat Consigne|`OUI`|10 → 38| 
+|Info/Thermostat Verrouillage|`NON`|0 = Non Verrouillé<br/>1 = Verrouillé| 
+|Action/Thermostat Verrouillage|`OUI si Info/Verrouillage`|N/A
+|Action/Thermostat Déverrouillage|`OUI si Info/Verrouillage`|N/A
+
+Portails ou Garages
+--------------------
+
+Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Portail état ouvrant<br/>Info/Garage état ouvrant<br/>(même traitement)|`OUI`|0 = Fermé<br/>252 = Fermeture en cours<br/>253 = Stoppé<br/>254 = Ouverture en cours<br/>255 = Ouvert<br/>(Configurable)|
+|Action/Portail ou garage bouton toggle|`Si seul`|Réf. vers Info/Portail état ouvrant<br/>ou<br/>Réf. vers Info/Garage état ouvrant| 
+|Action/Portail ou garage bouton d’ouverture|`Si pas Toggle`|Réf. vers Info/Portail état ouvrant<br/>ou<br/>Réf. vers Info/Garage état ouvrant
+|Action/Portail ou garage bouton de fermeture|`Si pas Toggle`|Réf. vers Info/Portail état ouvrant<br/>ou<br/>Réf. vers Info/Garage état ouvrant
+
+Haut-Parleurs (Eve Seulement)
+-----------------------------
+
+Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Haut-Parleur Mute|`OUI`|1 = Pas de son<br/>0 = Son|
+|Action/Haut-Parleur Mute|`Si pas Toggle`|Réf. vers Info/Haut-Parleur Mute| 
+|Action/Haut-Parleur UnMute|`Si pas Toggle`|Réf. vers Info/Haut-Parleur Mute| 
+|Action/Haut-Parleur Toggle Mute|`Si seul`|Réf. vers Info/Haut-Parleur Mute|
+|Info/Haut-Parleur Volume|`NON`|%| 
+|Action/Haut-Parleur Volume|`OUI si Info/HP Volume`|Réf. vers Info/Haut-Parleur Volume| 
+
+Generic
+----------
+
+Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Puissance Electrique|`NON`|Watts|
+|Info/Consommation Electrique<br/>(cachée)|`NON`|KWh
+|Info/Température|`NON`|-50→100 °C| 
+|Info/Luminosité|`NON`|0.0001→ 100000 lux| 
+|Info/Présence|`NON`|0 = Pas de mouvement<br/>1 = Mouvement|
+|Info/Batterie|`NON`|%| 
+|Info/Batterie en charge|`NON`|0 = NON<br/>pas 0 = OUI| 
+|Info/Détection de fumée|`NON`|pas 1 = Pas de fumée détectée<br/>1 = fumée détectée| 
+|Info/Inondation|`NON`|pas 1 = Pas de fuite détectée<br/>1 = fuite détectée| 
+|Info/Humidité|`NON`|%| 
+|Info/Porte<br/>Info/Fenêtre<br/>(même traitement)|`NON`|pas 1 = Contact<br/>1 = Pas de contact| 
+|Info/Sabotage|`NON`|1 = Pas de sabotage<br/>0 = Sabotage| 
+|Info/Détection de fumée|`NON`|1 = Pas de sabotage<br/>1 = fumée détectée| 
+|Info/Choc|`NON`|Générique (Eve Seulement)
+|Info/Pression|`NON`|Générique (Eve Seulement)
+|Info/Son (dB)|`NON`|Générique (Eve Seulement)
+|Info/UV|`NON`|Générique (Eve Seulement)
+|Info/Générique|`NON`|Valeur <64 charactères<br/>avec Unité indiquée ou pas<br/>(Eve Seulement)| 
+|Action/Générique<br/>(N’existe pas en HomeKit)|`NON`|N/A|
+|Info/Pluie (accumulation)|`NON`|Générique (Eve Seulement)|
+|Info/Vent (direction)|`NON`|Générique (Eve Seulement)|
+|Info/Vent (vitesse)|`NON`|Générique (Eve Seulement)|
+|Info/Actif|`NON`|0 = inactif<br/>1 = actif|
+|Info/Defectueux|`NON`|0 = non<br/>1 = oui|
 
 *Des exemples de configurations sont disponibles à la fin de la documentation*
 
