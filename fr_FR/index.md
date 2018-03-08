@@ -338,13 +338,9 @@ Pour ajouter le pont dans Homekit, il suffit de scanner le QR code avec l'applic
 
 ![qr-code](https://bphoque.github.io/images/qr-code.png)
 ![qr-code1](https://bphoque.github.io/images/qr-code1.png)
-
-
->Comme expliqué plus haut dans la doc, Homebridge n'est pas reconnu officiellement par Apple. Un message indique que l'accessoire n'est pas certifié, il faut valider l'inclusion en cliquant sur "Poursuivre l'ajout".
-
-
 ![qr-code21](https://bphoque.github.io/images/qr-code21.png)
 
+>Comme expliqué plus haut dans la doc, Homebridge n'est pas reconnu officiellement par Apple. Un message indique que l'accessoire n'est pas certifié, il faut valider l'inclusion en cliquant sur "Poursuivre l'ajout".
 
 Le pont est maintenant intégré dans Homekit.
 
@@ -358,23 +354,15 @@ L'inclusion de Jeedom dans HomeKit, se fait en ouvrant l'application "Maison" et
 
 >Dans l'exemple, le domicile s'appelle "Test". Son nom peut être modifié en allant dans les réglages de l'application.
 
-Il faut scanner le code PIN 
+Il faut scanner le code PIN et sélectionner le pont à inclure. Le pont Jeedom sera intégré à Homekit
 
 ![home-2](https://bphoque.github.io/images/home-2.jpg)
-
-
->Le code PIN peut être également rentré manuellement en cliquant sur "Code absent ou impossible à scanner ?".
-
-Il faut sélectionner le pont à inclure.
-
 ![home-3](https://bphoque.github.io/images/home-3.jpg)
-
-
->Comme expliqué plus haut dans la doc, Homebridge n'est pas reconnu officiellement par Apple. Un message indique que l'accessoire n'est pas certifié, il faut valider l'inclusion en cliquant sur "Poursuivre l'ajout".
-
 ![home-4](https://bphoque.github.io/images/home-4.png)
 
-*Le pont Jeedom est maintenant intégré à HomeKit.*
+
+>Le code PIN peut être également rentré manuellement en cliquant sur "Code absent ou impossible à scanner ?"
+
 
 
 >Il n'est pas possible d'inclure le pont Jeedom sur plusieurs appareils IOS. Pour utiliser Homebridge sur plusieurs appareils IOS, il suffit de partager le domicile en suivant la procédure suivante :
@@ -389,15 +377,10 @@ Les accessoires doivent être rangés correctement dans HomeKit. Il faudra crée
 
 >Les pièces dans Jeedom ne sont pas importées dans Homebridge. Ceci n'est pas dû à Jeedom mais à la gestion des pièces par Apple.
 
-Le premier accessoire à "ranger" est le pont Jeedom. 
+Le premier accessoire à "ranger" est le pont Jeedom. Il faut sélectionner la pièce où il sera installé. Si elle n'existe pas, il faudra la créer en cliquant sur "Créer". Ensuite, il faut définir le nom de la nouvelle pièce. Il est également possible de lui attribuer un fond d'écran dédié. Pour finaliser la création de la pièce, il faut cliquer sur "Enregistrer".
 
 ![home-5](https://bphoque.github.io/images/home-5.jpg)
-
-Il faut sélectionner la pièce où sera installé le pont. Si elle n'existe pas, il faudra la créer en cliquant sur "Créer".
-
 ![home-05](https://bphoque.github.io/images/home-05.jpg)
-
-Définir le nom de la nouvelle pièce. Il est également possible de lui attribuer un fond d'écran dédié. Pour finaliser la création de la pièce, il faut cliquer sur "Enregistrer".
 
 ![home-051](https://bphoque.github.io/images/home-051.jpg)
 
