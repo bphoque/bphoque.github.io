@@ -205,7 +205,7 @@ Lumière
 Prises
 --------
 
-|Type générique  | Obligatoire | Valeurs possibles |
+|Type générique| Obligatoire|Valeurs possibles|
 |---------------|:----------------:|----------------|
 |Info/Prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
 |Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
