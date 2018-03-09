@@ -196,11 +196,11 @@ Lumière
 |Action/Lumière Slider (Luminosité)|`OUI`|Réf. vers Lumière Etat|
 |Action/Lumière Bouton On|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
 |Action/Lumière Bouton Off|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
-|Info/Lumière Couleur| `NON` |Format #RRGGBB
-|Action/Lumière Couleur|   `Si Info/Lumière Couleur `|Réf. vers Info/Lumière Couleur
-|Info/Lumière Température Couleur|`NON`|Réf. vers<br/>- Info/Lumière Température Couleur<br/>(Eve Seulement)
-|Action/Lumière Toggle|  `NON Utilisé`  |N/A
-| Action/Lumière Mode|  `NON Utilisé` |N/A
+|Info/Lumière Couleur| `NON` |Format #RRGGBB|
+|Action/Lumière Couleur|   `Si Info/Lumière Couleur `|Réf. vers Info/Lumière Couleur|
+|Info/Lumière Température Couleur|`NON`|Réf. vers<br/>- Info/Lumière Température Couleur<br/>(Eve Seulement)|
+|Action/Lumière Toggle|  `NON Utilisé`  |N/A|
+| Action/Lumière Mode|  `NON Utilisé` |N/A|
 
 Prises
 --------
@@ -210,7 +210,7 @@ Prises
 |Info/Prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
 |Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
 |Action/Prise Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
-|Action/Prise Slider|`NON Utilisé`|N/A
+|Action/Prise Slider|`NON Utilisé`|N/A|
 
 Volets
 --------
@@ -220,8 +220,8 @@ Volets
 |Info/Volet Etat|`OUI`|0 = Fermé<br/>> 95 = Ouvert|
 |Action/Volet Bouton Monter|`Si Descendre`|Réf. vers Info/Volet Etat| 
 |Action/Volet Bouton Descendre|`Si Monter`|Réf. vers Info/Volet Etat|
-|Action/Volet Bouton Stop|`NON Utilisé`|N/A
-|Action/Volet Bouton Slider|`Si seul`|Réf. vers Info/Volet Etat
+|Action/Volet Bouton Stop|`NON Utilisé`|N/A|
+|Action/Volet Bouton Slider|`Si seul`|Réf. vers Info/Volet Etat|
 
 Volets BSO
 ----------
