@@ -202,21 +202,16 @@ Lumière
 |Action/Lumière Toggle|  `NON Utilisé`  |N/A|
 | Action/Lumière Mode|  `NON Utilisé` |N/A|
 
+
 Lumière
 ----------
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Lumière Etat (Binaire)|`NON`|Ajout pour les lumières dont la luminosité ne change pas lorsqu’elle est éteinte (Yeelight, Ikea, …​)<br/>0 = Eteint<br/>Autre que 0 = Allumé|
-|Info/Lumière Etat|`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
-|Action/Lumière Slider (Luminosité)|`OUI`|Réf. vers Lumière Etat|
-|Action/Lumière Bouton On|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
-|Action/Lumière Bouton Off|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
-|Info/Lumière Couleur| `NON` |Format #RRGGBB|
-|Action/Lumière Couleur|   `Si Info/Lumière Couleur `|Réf. vers Info/Lumière Couleur|
-|Info/Lumière Température Couleur|`NON`|Réf. vers<br/>- Info/Lumière Température Couleur<br/>(Eve Seulement)|
-|Action/Lumière Toggle|  `NON Utilisé`  |N/A|
-| Action/Lumière Mode|  `NON Utilisé` |N/A|
+|Info/Prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
+|Action/Prise Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
+|Action/Prise Slider|`NON Utilisé`|N/A|
 
 Prises
 --------
