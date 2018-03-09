@@ -208,15 +208,10 @@ Lumière
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Info/prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
 |Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
 |Action/Prise Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
 |Action/Prise Slider|`NON Utilisé`|N/A|
-
-|Type générique  | Obligatoire | Valeurs possibles |
-|---------------|:----------------:|----------------|
-|Info/prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
-|Info/Lumière Etat|`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
 
 Prises
 --------
