@@ -650,4 +650,208 @@ L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge s
 
 ![plateforme-hb](https://bphoque.github.io/images/plateforme-hb.png)
 
+Foscam C1 : 
 
+<pre><code>
+{
+   "platform":"Camera-ffmpeg",
+   "cameras":[
+      {
+         "name":"Camera-Salon",
+         "videoConfig":{
+            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:554/videoMain",
+            "stillImageSource":"-i http://192.168.1.121:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
+            "maxStreams":2,
+            "maxWidth":1280,
+            "maxHeight":720,
+            "maxFPS":30,
+            "vcodec": "h264"
+         }
+      }
+   ]
+}
+</code></pre>
+
+Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
+
+Foscam C1 V2 : 
+
+<pre><code>
+{
+   "platform":"Camera-ffmpeg",
+   "cameras":[
+      {
+         "name":"Son nom",
+         "videoConfig":{
+            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:Portrtsp/videoMain",
+            "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx:Port/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
+            "maxStreams":2,
+            "maxWidth":1280,
+            "maxHeight":720,
+            "maxFPS":30
+         }
+      }
+   ]
+}
+</code></pre>
+
+Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
+
+Foscam FI9821P : 
+
+<pre><code>
+      {
+         "name":"son nom",
+         "videoConfig":{
+            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:Port/videoMain",
+            "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx:Port/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
+            "maxStreams":2,
+            "maxWidth":1280,
+            "maxHeight":720,
+            "maxFPS":30
+         }
+      }
+   ]
+}
+</code></pre>
+Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
+
+Foscam FI9803 V3 : 
+
+<pre><code>
+{
+   "platform":"Camera-ffmpeg",
+   "cameras":[
+      {
+         "name":"Son nom",
+         "videoConfig":{
+            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:Portrtsp/videoMain",
+            "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx:Port/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
+            "maxStreams":2,
+            "maxWidth":1280,
+            "maxHeight":720,
+            "maxFPS":30
+         }
+      }
+   ]
+}
+</code></pre>
+
+wanscam rtsp HWXXX : 
+
+<pre><code>
+{
+ "platform":"Camera-ffmpeg",
+   "cameras":[
+      {
+         "name":"Camera-Arrière",
+         "videoConfig":{
+            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:554/1",
+            "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx/web/tmpfs/snap.jpg",
+            "maxStreams":2,
+            "maxWidth":1280,
+            "maxHeight":720,
+            "maxFPS":30,
+            "vcodec": "h264"
+         }
+      }
+   ]
+}
+</code></pre>
+
+Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
+
+Dlink DCS-5020L : 
+
+<pre><code>
+{
+  "platform": "Camera-ffmpeg",
+  "cameras": [
+	{
+	  "name": "Camera Cellier",
+	  "videoConfig": {
+		"source": "-re -f mjpeg -i http://login:password@xxx.xxx.xxx.xxx/mjpeg.cgi",
+		"stillImageSource": "-f mjpeg -i http://login:password@xxx.xxx.xxx.xxx/image/jpeg.cgi",
+		"maxStreams": 2,
+		"maxWidth": 640,
+		"maxHeight": 480,
+		"maxFPS": 30,
+		"vcodec": "h264"
+	  }
+	}
+  ]
+}
+</code></pre>
+
+Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
+
+Netatmo Welcome : 
+
+Cette caméra deviendra officielement compatible HomeKit courant 2018. 
+Son intégration dans Homebridge est néanmoins possible.
+
+<pre><code>
+{
+"platform": "Camera-ffmpeg",
+"cameras": [
+{
+"name": "Camera Name",
+"videoConfig": {
+"source": "-re -i http://xxx.xxx.xxx.xxx/<Local_Access_Key>/live/files/high/index.m3u8",
+"stillImageSource": "-i http://xxx.xxx.xxx.xxx/<Local_Access_Key>/live/snapshot_720.jpg",
+"maxStreams": 2,
+"maxWidth": 1280,
+"maxHeight": 720,
+"maxFPS": 30
+}
+}
+]
+}
+</code></pre>
+
+Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et  <Local_Access_Key> -> voir dans le plugin Caméra l'URL de capture /<Local_Access_Key>/live/snapshot_720.jpg.
+
+![camera](https://bphoque.github.io/images/camera.png)
+
+Configurer plusieurs caméras (ou plateformes) : 
+
+Pour configurer plusieurs caméras, il suffit de mettre une barre | entre les deux configurations.
+
+<pre><code>
+{
+  "platform": "Camera-ffmpeg",
+  "cameras": [
+	{
+	  "name": "Cellier 1",
+	  "videoConfig": {
+		"source": "-re -f mjpeg -i http://login:password@adresseIP/mjpeg.cgi",
+		"stillImageSource": "-f mjpeg -i http://login:password@adresseIP/image/jpeg.cgi",
+		"maxStreams": 2,
+		"maxWidth": 640,
+		"maxHeight": 480,
+		"maxFPS": 30,
+		"vcodec": "h264"
+	  }
+	}
+  ]
+}
+|
+{
+"platform": "Camera-ffmpeg",
+"cameras": [
+{
+"name": "Salon 1",
+"videoConfig": {
+"source": "-re -i http://adresseip/xxxxxxx/live/files/high/index.m3u8",
+"stillImageSource": "-i http://adresseIP/xxxxxx/live/snapshot_720.jpg",
+"maxStreams": 2,
+"maxWidth": 1280,
+"maxHeight": 720,
+"maxFPS": 30
+}
+}
+]
+}
+</code></pre>
+
+**Cela est également valable pour toute autre plateforme comme le thermostat NEST par exemple.**
