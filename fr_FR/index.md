@@ -559,3 +559,72 @@ Lumière
 Type d'accessoire : Dimmer 2 de Fibaro (Z-Wave)
 
 ![lumiere](https://bphoque.github.io/images/lumiere.png)
+
+Type d'accessoire : Double contact de Nodon (EnOcean)
+
+![lumiere-2](https://bphoque.github.io/images/lumiere-2.png)
+
+Si les deux contacts sont utilisés, copier-coller les types génériques On-1 sur On-2, Off-1 sur Off-2 et Etat-1 sur Etat-2.
+
+Température et hydrométrie
+---------------------------
+
+Type d'accessoire : Sonde Oregon (RfxCom) et Xiaomi Aqara
+
+![temperature](https://bphoque.github.io/images/temperature.png)
+
+Détecteur d'ouverture
+----------------------
+
+Type d'accessoire : Détecteur Fibaro (Z-Wave)
+
+Fenêtre : 
+
+![fenetre](https://bphoque.github.io/images/fenetre.png)
+
+Si un capteur de température est utilisé, mettre "Info / Température" sur le nom de la commande Température.
+
+Porte : 
+
+![porte](https://bphoque.github.io/images/porte.png)
+
+Si un capteur de température est utilisé, mettre "Info / Température" sur le nom de la commande Température.
+
+Détecteur de fuite
+------------------
+
+Type d'accessoire : Détecteur Fibaro (Z-Wave)
+
+![fuite](https://bphoque.github.io/images/fuite.png)
+
+Détecteur de fumées
+--------------------
+
+Type d'accessoire : Détecteur Fibaro (Z-Wave)
+
+![fumee](https://bphoque.github.io/images/fumee.png)
+
+Volets roulants
+----------------- 
+
+Type d'accessoire : Détecteur Fibaro FGR-222 (Z-Wave)
+
+![volet](https://bphoque.github.io/images/volet.png)
+
+Porte de garage
+-----------------
+
+Type d'accessoire : Aeotec - Contrôleur de porte de garage (GEN5) (Z-Wave)
+
+![garage](https://bphoque.github.io/images/garage.png)
+
+Virtuel
+--------
+
+Type d'accessoire : Interrupteur bistable avec le plugin virtuel
+
+![virtuel](https://bphoque.github.io/images/virtuel.png)
+
+![virtuel-tg](https://bphoque.github.io/images/virtuel-tg.png)
+
+
