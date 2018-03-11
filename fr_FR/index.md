@@ -627,4 +627,27 @@ Type d'accessoire : Interrupteur bistable avec le plugin virtuel
 
 ![virtuel-tg](https://bphoque.github.io/images/virtuel-tg.png)
 
+Caméra
+------
+
+Homebrige prend en charge les caméras.
+
+![camera2.](https://bphoque.github.io/images/camera2.png)
+
+En touchant la capture de la caméra souhaitée, elle s'affiche en plein écran et en live !
+
+![camera3](https://bphoque.github.io/images/camera3.png)
+
+Suivant les configurations matérielles, la qualité de la transmission peut varier. Par exemple, sur un NUC gen7 core i7, c'est quasiment du live ! La latence est très faible.
+
+Celles-ci peuvent afficher une notification lorsqu'un mouvement est détecté par un capteur de présence. Il faut que la caméra et le capteur soient configurés dans la même pièce et que les notifications du capteur soient activées.
+
+![notig](https://bphoque.github.io/images/notif.jpg)
+
+Les caméras décrites ci-dessous ont été testées. Elles sont donc fonctionnelles dans Homebridge.
+
+L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge supplémentaire".
+
+![plateforme-hb](https://bphoque.github.io/images/plateforme-hb.png)
+
 
