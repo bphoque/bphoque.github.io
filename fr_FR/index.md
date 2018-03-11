@@ -842,3 +842,48 @@ Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux
 }</code></pre>
 
 **Cela est également valable pour toute autre plateforme comme le thermostat NEST par exemple.**
+
+Type Générique Custom
+---------------------
+
+Le type générique "Custom" permet de faire remonter n'importe quelle valeur "info" de tout type dans Homebridge. **Quelques exemples sont décris dans ce chapitre.**
+
+**L'information à remonter dans Homebridge ne doit pas dépasser 64 caractères.**
+
+>**Seule l'application d'Elgato Eve est compatible avec ce type générique. Les équipements utilisant ce type générique n'apparaitront pas dans l'application Maison d'Apple.**
+
+>**Les interactions avec Siri ainsi que les automations ne sont pas possibles avec ce type générique**
+
+>**Il est n'est pas possible de renommer l'accessoire**
+
+Utilisation avec le plugin Mode : 
+
+Cela permet d'afficher l'intitulé du mode jeedom en cours.
+
+![custom-1](https://bphoque.github.io/images/custom-1.png)
+
+Dans ce cas, il faut attribuer le type générique "Info/Générique" au nom de commande "Mode".
+
+
+![custom-2](https://bphoque.github.io/images/custom-2.png)
+
+Utilisation avec le plugin Netatmo (station météo) : 
+
+Cela permet d'afficher les informations de type pression, CO2, noise.
+
+![custom-3](https://bphoque.github.io/images/custom-3.png)
+
+![custom-4](https://bphoque.github.io/images/custom-4.png)
+
+
+>**Si le champ unité a été indiqué dans jeedom, il remontra dans le type custom.**
+
+![custom-9](https://bphoque.github.io/images/custom-9.png)
+
+Utilisation avec le plugin vigilance méteo : 
+
+![custom-7](https://bphoque.github.io/images/custom-7.png)
+![custom-6](https://bphoque.github.io/images/custom-6.png)
+
+
+
