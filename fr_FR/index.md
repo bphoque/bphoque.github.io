@@ -805,7 +805,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et Local_Acces
 
 Configurer plusieurs caméras (ou plateformes) : 
 
-Pour configurer plusieurs caméras, il suffit de mettre une barre | entre les deux configurations.
+Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux configurations.
 
 <pre><code>
 {
