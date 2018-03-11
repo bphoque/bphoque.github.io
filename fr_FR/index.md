@@ -206,6 +206,11 @@ Lumière
 Lumière
 ----------
 
+| Type générique | Obligatoire |Valeurs possibles |
+|---------------|:----------------:|
+|Info/prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat|
+
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
