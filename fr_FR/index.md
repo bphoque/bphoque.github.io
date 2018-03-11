@@ -786,8 +786,8 @@ Son intégration dans Homebridge est néanmoins possible.
 {
 "name": "Camera Name",
 "videoConfig": {
-"source": "-re -i http://xxx.xxx.xxx.xxx/<Local_Access_Key>/live/files/high/index.m3u8",
-"stillImageSource": "-i http://xxx.xxx.xxx.xxx/<Local_Access_Key>/live/snapshot_720.jpg",
+"source": "-re -i http://xxx.xxx.xxx.xxx/Local_Access_Key/live/files/high/index.m3u8",
+"stillImageSource": "-i http://xxx.xxx.xxx.xxx/Local_Access_Key/live/snapshot_720.jpg",
 "maxStreams": 2,
 "maxWidth": 1280,
 "maxHeight": 720,
@@ -796,6 +796,7 @@ Son intégration dans Homebridge est néanmoins possible.
 }
 ]
 }</code></pre>
+
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et Local_Access_Key -> voir dans le plugin Caméra l'URL de capture /Local_Access_Key/live/snapshot_720.jpg.
 
