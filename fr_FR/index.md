@@ -202,31 +202,12 @@ Lumière
 |Action/Lumière Toggle|  `NON Utilisé`  |N/A|
 | Action/Lumière Mode|  `NON Utilisé` |N/A|
 
-Prise
---------
-
-|Type générique  | Obligatoire | Valeurs possibles |
-|---------------|:---------:|-------------|
-|Info/prise Etat|`OUI`|0 = Eteint<br/>1 = Allumée|
-|Info/Lumière Etat|`OUI`|Luminosité<br/>0-100 Ou 0-99 ou 0-255<br/>(en fonction du max de Action/Lumière Slider)<br/>ou Binaire<br/>0 = Eteint<br/> autre que 0 = Allumé| 
-|Action/Lumière Slider (Luminosité)|`OUI`|Réf. vers Lumière Etat|
-|Action/Lumière Bouton On|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
-|Action/Lumière Bouton Off|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
-|Info/Lumière Couleur| `NON` |Format #RRGGBB|
-|Action/Lumière Couleur|   `Si Info/Lumière Couleur `|Réf. vers Info/Lumière Couleur|
-|Info/Lumière Température Couleur|`NON`|Réf. vers<br/>- Info/Lumière Température Couleur<br/>(Eve Seulement)|
-|Action/Lumière Toggle|  `NON Utilisé`  |N/A|
-| Action/Lumière Mode|  `NON Utilisé` |N/A|
-
-
-
-
 Prises
 ----------
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |----------------|:-----------:|------------|
-|Info/Prise<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Info/Prise<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé                                    hyhyhhhhhhhhhhhhhhhhhhhhhhh|
 |Action/Prise<br/>Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
 |Action/Prise<br/>Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
 |Action/Prise<br/>Slider|`NON Utilisé`|N/A|
