@@ -203,20 +203,16 @@ Lumière
 | Action/Lumière Mode|  `NON Utilisé` |N/A|
 
 
-Lumière
+Prises
 ----------
-
-| Type générique | Obligatoire |Valeurs possibles |
-|---------------|:----------------:|
-|Info/prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
-|Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat|
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Info/Prise Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
 |Action/Prise Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
 |Action/Prise Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
 |Action/Prise Slider|`NON Utilisé`|N/A|
+|Action/Lumière Bouton Off|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
 
 Prises
 --------
