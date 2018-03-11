@@ -780,8 +780,7 @@ Netatmo Welcome :
 Cette caméra deviendra officielement compatible HomeKit courant 2018. 
 Son intégration dans Homebridge est néanmoins possible.
 
-<pre><code>
-{
+<pre><code>{
 "platform": "Camera-ffmpeg",
 "cameras": [
 {
@@ -796,8 +795,7 @@ Son intégration dans Homebridge est néanmoins possible.
 }
 }
 ]
-}
-</code></pre>
+}</code></pre>
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et Local_Access_Key -> voir dans le plugin Caméra l'URL de capture /Local_Access_Key/live/snapshot_720.jpg.
 
@@ -807,8 +805,7 @@ Configurer plusieurs caméras (ou plateformes) :
 
 Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux configurations.
 
-<pre><code>
-{
+<pre><code>{
   "platform": "Camera-ffmpeg",
   "cameras": [
 	{
@@ -841,7 +838,6 @@ Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux
 }
 }
 ]
-}
-</code></pre>
+}</code></pre>
 
 **Cela est également valable pour toute autre plateforme comme le thermostat NEST par exemple.**
