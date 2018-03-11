@@ -652,8 +652,7 @@ L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge s
 
 Foscam C1 : 
 
-<pre><code>
-{
+<pre><code>{
    "platform":"Camera-ffmpeg",
    "cameras":[
       {
@@ -669,15 +668,13 @@ Foscam C1 :
          }
       }
    ]
-}
-</code></pre>
+}</code></pre>
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
 Foscam C1 V2 : 
 
-<pre><code>
-{
+<pre><code>{
    "platform":"Camera-ffmpeg",
    "cameras":[
       {
@@ -692,15 +689,13 @@ Foscam C1 V2 :
          }
       }
    ]
-}
-</code></pre>
+}</code></pre>
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
 Foscam FI9821P : 
 
-<pre><code>
-      {
+<pre><code>{
          "name":"son nom",
          "videoConfig":{
             "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:Port/videoMain",
@@ -712,14 +707,13 @@ Foscam FI9821P :
          }
       }
    ]
-}
-</code></pre>
+}</code></pre>
+
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
 Foscam FI9803 V3 : 
 
-<pre><code>
-{
+<pre><code>{
    "platform":"Camera-ffmpeg",
    "cameras":[
       {
@@ -734,13 +728,11 @@ Foscam FI9803 V3 :
          }
       }
    ]
-}
-</code></pre>
+}</code></pre>
 
 wanscam rtsp HWXXX : 
 
-<pre><code>
-{
+<pre><code>{
  "platform":"Camera-ffmpeg",
    "cameras":[
       {
@@ -756,15 +748,13 @@ wanscam rtsp HWXXX :
          }
       }
    ]
-}
-</code></pre>
+}</code></pre>
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
 Dlink DCS-5020L : 
 
-<pre><code>
-{
+<pre><code>{
   "platform": "Camera-ffmpeg",
   "cameras": [
 	{
@@ -790,8 +780,7 @@ Netatmo Welcome :
 Cette caméra deviendra officielement compatible HomeKit courant 2018. 
 Son intégration dans Homebridge est néanmoins possible.
 
-<pre><code>
-{
+<pre><code>{
 "platform": "Camera-ffmpeg",
 "cameras": [
 {
@@ -806,10 +795,9 @@ Son intégration dans Homebridge est néanmoins possible.
 }
 }
 ]
-}
-</code></pre>
+}</code></pre>
 
-Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et  <Local_Access_Key> -> voir dans le plugin Caméra l'URL de capture /<Local_Access_Key>/live/snapshot_720.jpg.
+Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et  Local_Access_Key -> voir dans le plugin Caméra l'URL de capture /Local_Access_Key/live/snapshot_720.jpg.
 
 ![camera](https://bphoque.github.io/images/camera.png)
 
