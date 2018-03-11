@@ -550,4 +550,12 @@ sh: 1: homebridge: not found
 ![dependances-homebridge](https://bphoque.github.io/images/dependances-homebridge.png)
 
 
+Exemple de configuration
+=========================
 
+Lumière
+-------
+
+Type d'accessoire : Dimmer 2 de Fibaro (Z-Wave)
+
+![lumiere](https://bphoque.github.io/images/lumiere.png)
