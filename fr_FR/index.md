@@ -578,13 +578,13 @@ Détecteur d'ouverture
 
 Type d'accessoire : Détecteur Fibaro (Z-Wave)
 
-### Fenêtre : #
+### Fenêtre #
 
 ![fenetre](https://bphoque.github.io/images/fenetre.png)
 
 Si un capteur de température est utilisé, mettre "Info / Température" sur le nom de la commande Température.
 
-### Porte : #
+### Porte #
 
 ![porte](https://bphoque.github.io/images/porte.png)
 
@@ -650,7 +650,7 @@ L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge s
 
 ![plateforme-hb](https://bphoque.github.io/images/plateforme-hb.png)
 
-### Foscam C1 : # 
+### Foscam C1 # 
 
 <pre><code>{
    "platform":"Camera-ffmpeg",
@@ -672,7 +672,7 @@ L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge s
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-### Foscam C1 V2 : # 
+### Foscam C1 V2 # 
 
 <pre><code>{
    "platform":"Camera-ffmpeg",
@@ -693,7 +693,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-### Foscam FI9821P : #
+### Foscam FI9821P #
 
 <pre><code>{
          "name":"son nom",
@@ -711,7 +711,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-### Foscam FI9803 V3 : #
+### Foscam FI9803 V3 #
 
 <pre><code>{
    "platform":"Camera-ffmpeg",
@@ -730,7 +730,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
    ]
 }</code></pre>
 
-### wanscam rtsp HWXXX : #
+### wanscam rtsp HWXXX #
 
 <pre><code>{
  "platform":"Camera-ffmpeg",
@@ -752,7 +752,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-### Dlink DCS-5020L : #
+### Dlink DCS-5020L #
 
 <pre><code>{
   "platform": "Camera-ffmpeg",
@@ -775,7 +775,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-### Netatmo Welcome : #
+### Netatmo Welcome #
 
 Cette caméra deviendra officielement compatible HomeKit courant 2018. 
 Son intégration dans Homebridge est néanmoins possible.
@@ -802,7 +802,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et Local_Acces
 
 ![camera](https://bphoque.github.io/images/camera.png)
 
-### Configurer plusieurs caméras (ou plateformes) : #
+### Configurer plusieurs caméras (ou plateformes) #
 
 Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux configurations.
 
@@ -856,7 +856,7 @@ Le type générique "Custom" permet de faire remonter n'importe quelle valeur "i
 
 >**Il est n'est pas possible de renommer l'accessoire**
 
-### Utilisation avec le plugin Mode : #
+### Utilisation avec le plugin Mode #
 
 Cela permet d'afficher l'intitulé du mode jeedom en cours.
 
@@ -867,7 +867,7 @@ Dans ce cas, il faut attribuer le type générique "Info/Générique" au nom de 
 
 ![custom-2](https://bphoque.github.io/images/custom-2.png)
 
-### Utilisation avec le plugin Netatmo (station météo) : #
+### Utilisation avec le plugin Netatmo (station météo) #
 
 Cela permet d'afficher les informations de type pression, CO2, noise.
 
@@ -880,13 +880,119 @@ Cela permet d'afficher les informations de type pression, CO2, noise.
 
 ![custom-9](https://bphoque.github.io/images/custom-9.png)
 
-### Utilisation avec le plugin vigilance méteo : #
+### Utilisation avec le plugin vigilance méteo #
 
 ![custom-7](https://bphoque.github.io/images/custom-7.png)
 
 ![custom-6](https://bphoque.github.io/images/custom-6.png)
 
+Plugins spécifiques
+===================
+
+Plugin "Thermostat"
+---------------------
+
+>Pour configurer le plugin "Thermostat", il faut se référer à la documentation du plugin à cette adresse : https://jeedom.github.io/plugin-thermostat/fr_FR/.
+
+### Configuration #
+
+Seuls les modes "Chauffer" et "Refroidir" sont à configurer. Il faut attribuer un mode du plugin "Thermostat" à un mode de HomeKit.
+
+![thermostat](https://bphoque.github.io/images/thermostat.png)
 
 
+### Présentation #
+
+![thermostat1](https://bphoque.github.io/images/thermostat1.png)
+
+* **A** : Température Cible ou Consigne : Température envoyée au plugin Thermostat (Passe en mode Auto sur Maison et Eve / Mode Aucun sur widget Thermostat)
+* **B** : Température Ambiante : Température de référence pour le plugin Thermostat.
+* **C** : Commande de modification de la Consigne A : Augmenter ou diminuer la température à l’aide du curseur. Cela aura pour action de modifier également le mode du chauffage E qui passera à AUCUN dans le dashboard Jeedom.
+* **D** : Statut du thermostat retourné par le plugin Thermostat : Arrêté (ou Désactivé ou Eteint) (Rond vert dans Maison) / Chauffage (Rond Orange dans Maison) / Climatisation (Rond Bleu dans Maison).
+
+* **E** : Mode Auto (dans Maison ou Eve) : correspond au mode Aucun dans Jeedom où le Plugin Thermostat décide de ce qu'il doit faire en fonction de la température qu'on lui envoie. Ce mode permet de régler une température cible via le curseur C
+
+* **F** : Mode Clim / Refroidir : Mode customisé associé manuellement dans la configuration du Thermostat dans le Plugin Homebridge. Permet de lancer le mode associé dans le plugin Thermostat. (Repasse en mode AUTO, si une température cible est donnée)
+
+* **G** : Mode Chauf / Chauffer : Mode customisé associé manuellement dans la configuration du Thermostat dans le Plugin Homebridge. Permet de lancer le mode associé dans le plugin Thermostat. (Repasse en mode AUTO, si une température cible est donnée)
+
+* **H** : Eteint / Off : permet d'éteindre le thermostat.
+* **I** : Verrouillage/Protection Enfants (uniquement dans Eve) : permet de verrouiller le thermostat. (modifié)
+
+### Utilisation #
+
+En cliquant sur "CHAUF" ou "Chauffer", on active le mode du thermostat associé. Idem pour "CLIM" ou "Refroidir".
+
+Plugin "Alarme"
+---------------
+
+>La fonctionnalité de l'alarme dans Homebridge est compatible uniquement (pour l'instant) avec le plugin Jeedom "Alarme". Pour configurer le plugin "Alarme", il faut se référer à la documentation du plugin disponible à cette adresse : https://jeedom.github.io/plugin-alarm/fr_FR/.
+
+**Ce mode fonctionne avec l'application d'Apple Maison et celle d'Elgato Eve.**
+
+### Configuration #
+
+Dans HomeKit, la fonction alarme est gérée suivant 4 modes : "Désactivée", "Nuit", "A distance" et "Domicile".
+
+#### Depuis l'application Maison #
+
+![alarme](https://bphoque.github.io/images/alarme.png)
+
+#### Depuis l'application Eve #
+
+![alarmeeve](https://bphoque.github.io/images/alarmeeve.png)
+
+Le mode "Désactivé", inhibe l'ensemble des modes d'alarme du plugin "Alarme". Les actions de l'onglet "Désactivation OK" sont lancées (en fonction du mode de sortie).
+
+![inhibe](https://bphoque.github.io/images/inhibe.png)
+
+Les 3 autres modes, sont à définir dans la configuration du plugin Homebridge.
+
+
+![configalarme](https://bphoque.github.io/images/configalarme.png)
+
+
+>Le "mode Jeedom" correspond aux modes du plugin "Alarme".
+
+![modealarme](https://bphoque.github.io/images/modealarme.png)
+
+Il suffit d'affecter le "mode Jeedom" au mode Homebridge choisi.
+
+### Utilisation #
+
+Il suffit de cliquer sur l'icone "Alarme" dans l'application Maison.
+
+![iconealarme](https://bphoque.github.io/images/iconealarme.png)
+
+Et de sélectionner le mode.
+
+![selmodealarme](https://bphoque.github.io/images/selmodealarme.png)
+
+L'alarme est activée.
+
+Sur le dashboard : 
+
+![alarmeactive](https://bphoque.github.io/images/alarmeactive.png)
+
+Sur l'application Maison : 
+
+![alarmeactive2](https://bphoque.github.io/images/alarmeactive2.png)
+
+Pour la désactiver, il suffit de sélectionner "Désactivée". Les actions définies dans la partie "Désactivation OK" du plugin "Alarme" vont s'exécuter.
+
+![desactivationok](https://bphoque.github.io/images/desactivationok.png)
+
+En cas de déclenchement de l'alarme, une notification apparaît sur le téléphone.
+
+![alarmedeclanchee](https://bphoque.github.io/images/alarmedeclanchee.png)
+
+Pour la désarmer, il faut cliquer sur l'icône "Alarme" et sélectionner "Désactivée".
+
+
+![reinitialiseralarme](https://bphoque.github.io/images/reinitialiseralarme.png)
+
+Les actions définies dans la partie "Réinitialisation" du plugin "Alarme" vont s'éxécuter.
+
+![reinitialisation](https://bphoque.github.io/images/reinitialisation.png)
 
 
