@@ -934,12 +934,7 @@ Plugin "Alarme"
 
 Dans HomeKit, la fonction alarme est gérée suivant 4 modes : "Désactivée", "Nuit", "A distance" et "Domicile".
 
-#### Depuis l'application Maison #
-
 ![alarme](https://bphoque.github.io/images/alarme.png)
-
-#### Depuis l'application Eve #
-
 ![alarmeeve](https://bphoque.github.io/images/alarmeeve.png)
 
 Le mode "Désactivé", inhibe l'ensemble des modes d'alarme du plugin "Alarme". Les actions de l'onglet "Désactivation OK" sont lancées (en fonction du mode de sortie).
