@@ -883,6 +883,7 @@ Cela permet d'afficher les informations de type pression, CO2, noise.
 ### Utilisation avec le plugin vigilance méteo : #
 
 ![custom-7](https://bphoque.github.io/images/custom-7.png)
+
 ![custom-6](https://bphoque.github.io/images/custom-6.png)
 
 
