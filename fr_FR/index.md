@@ -578,13 +578,13 @@ Détecteur d'ouverture
 
 Type d'accessoire : Détecteur Fibaro (Z-Wave)
 
-Fenêtre : 
+###Fenêtre : #
 
 ![fenetre](https://bphoque.github.io/images/fenetre.png)
 
 Si un capteur de température est utilisé, mettre "Info / Température" sur le nom de la commande Température.
 
-Porte : 
+###Porte : #
 
 ![porte](https://bphoque.github.io/images/porte.png)
 
@@ -650,7 +650,7 @@ L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge s
 
 ![plateforme-hb](https://bphoque.github.io/images/plateforme-hb.png)
 
-Foscam C1 : 
+###Foscam C1 :# 
 
 <pre><code>{
    "platform":"Camera-ffmpeg",
@@ -672,7 +672,7 @@ Foscam C1 :
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-Foscam C1 V2 : 
+###Foscam C1 V2 :# 
 
 <pre><code>{
    "platform":"Camera-ffmpeg",
@@ -693,7 +693,7 @@ Foscam C1 V2 :
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-Foscam FI9821P : 
+###Foscam FI9821P : #
 
 <pre><code>{
          "name":"son nom",
@@ -711,7 +711,7 @@ Foscam FI9821P :
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-Foscam FI9803 V3 : 
+###Foscam FI9803 V3 : #
 
 <pre><code>{
    "platform":"Camera-ffmpeg",
@@ -730,7 +730,7 @@ Foscam FI9803 V3 :
    ]
 }</code></pre>
 
-wanscam rtsp HWXXX : 
+###wanscam rtsp HWXXX : #
 
 <pre><code>{
  "platform":"Camera-ffmpeg",
@@ -752,7 +752,7 @@ wanscam rtsp HWXXX :
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-Dlink DCS-5020L : 
+###Dlink DCS-5020L : #
 
 <pre><code>{
   "platform": "Camera-ffmpeg",
@@ -775,7 +775,7 @@ Dlink DCS-5020L :
 
 Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par le login de connexion à la caméra et password par le mot de passe de connexion à la caméra.
 
-Netatmo Welcome : 
+###Netatmo Welcome : #
 
 Cette caméra deviendra officielement compatible HomeKit courant 2018. 
 Son intégration dans Homebridge est néanmoins possible.
@@ -802,7 +802,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP la caméra et Local_Acces
 
 ![camera](https://bphoque.github.io/images/camera.png)
 
-Configurer plusieurs caméras (ou plateformes) : 
+###Configurer plusieurs caméras (ou plateformes) : #
 
 Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux configurations.
 
@@ -846,8 +846,6 @@ Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux
 Type Générique Custom
 ---------------------
 
-### Test titre  3 #
-
 Le type générique "Custom" permet de faire remonter n'importe quelle valeur "info" de tout type dans Homebridge. **Quelques exemples sont décris dans ce chapitre.**
 
 **L'information à remonter dans Homebridge ne doit pas dépasser 64 caractères.**
@@ -858,7 +856,7 @@ Le type générique "Custom" permet de faire remonter n'importe quelle valeur "i
 
 >**Il est n'est pas possible de renommer l'accessoire**
 
-Utilisation avec le plugin Mode : 
+###Utilisation avec le plugin Mode : #
 
 Cela permet d'afficher l'intitulé du mode jeedom en cours.
 
@@ -869,7 +867,7 @@ Dans ce cas, il faut attribuer le type générique "Info/Générique" au nom de 
 
 ![custom-2](https://bphoque.github.io/images/custom-2.png)
 
-Utilisation avec le plugin Netatmo (station météo) : 
+###Utilisation avec le plugin Netatmo (station météo) : #
 
 Cela permet d'afficher les informations de type pression, CO2, noise.
 
@@ -882,7 +880,7 @@ Cela permet d'afficher les informations de type pression, CO2, noise.
 
 ![custom-9](https://bphoque.github.io/images/custom-9.png)
 
-Utilisation avec le plugin vigilance méteo : 
+###Utilisation avec le plugin vigilance méteo : #
 
 ![custom-7](https://bphoque.github.io/images/custom-7.png)
 ![custom-6](https://bphoque.github.io/images/custom-6.png)
