@@ -1,0 +1,5 @@
+@-moz-document url-prefix() { 
+  .side-nav {
+    height: 100%;
+  }
+}
