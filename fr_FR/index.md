@@ -331,7 +331,7 @@ Il existe plusieurs applications sur l'appstore compatibles HomeKit. L'applicati
 
 ![app-domicile](https://bphoque.github.io/images/app-domicile.jpg)
 
-Le pont peur être inclu manuellement en entrant le code PIN et en sélectionnant le pont ou automatiquement en scannant le QR code.
+Le pont peut être inclu manuellement en entrant le code PIN et en sélectionnant le pont ou automatiquement en scannant le QR code.
 
 Ajout du pont par QR code
 -------------------------
@@ -470,7 +470,7 @@ FAQ
 
 **-> J'ai mon Homebridge qui n'exécute pas les commandes !**
 
->Il faut bien mettre à jour le plugin App Mobile, puis dans la configuration des dépendances, il suffit de renseigner un utilisateur avec des droits d'exécution sur les commandes.
+>Il faut bien mettre à jour le plugin.
 
 **-> J'ai bien le retour d'état d'un équipement mais impossible de le piloter !**
 
