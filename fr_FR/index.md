@@ -527,6 +527,7 @@ Interprétation des LOGS Homebridge
 >L'Accessoire 3 est visible et la case "Envoyer vers Homebridge" est cochée. Mais il n'y a pas de type générique "Etat" (ou celui-ci n'est pas visible). L'accessoire ne sera donc pas intégré dans Homebridge. Pour corriger ce problème, ajoutez le type générique "Info / Prise Etat" à l'accessoire (ou cochez la case "visible").
 
 <pre><code>----
+
 [Mon Jul 17 2017 19:49:49 GMT+0000 (UTC)] [Jeedom] ┌──── Maison > Accessoire 4 (444)
 [Mon Jul 17 2017 19:49:49 GMT+0000 (UTC)] [Jeedom] [WARN] Pas de type générique "Info/Lumière Etat" ou "Info/Lumière Couleur"
 [Mon Jul 17 2017 19:49:49 GMT+0000 (UTC)] [Jeedom] [WARN] Pas de type générique "Action/Prise Bouton On" ou reférence à l'état non définie sur la commande On
@@ -980,11 +981,10 @@ Pour la désactiver, il suffit de sélectionner "Désactivée". Les actions déf
 En cas de déclenchement de l'alarme, une notification apparaît sur le téléphone.
 
 ![alarmedeclanchee](https://bphoque.github.io/images/alarmedeclanchee.png)
+![reinitialiseralarme](https://bphoque.github.io/images/reinitialiseralarme.png)
 
 Pour la désarmer, il faut cliquer sur l'icône "Alarme" et sélectionner "Désactivée".
 
-
-![reinitialiseralarme](https://bphoque.github.io/images/reinitialiseralarme.png)
 
 Les actions définies dans la partie "Réinitialisation" du plugin "Alarme" vont s'éxécuter.
 
