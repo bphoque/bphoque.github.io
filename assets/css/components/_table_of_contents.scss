@@ -7,7 +7,7 @@
     }
 
   li {
-    padding: 3px 0;
+    padding: 2px 0;
   }
   a {
     display: inline-block;
@@ -28,11 +28,6 @@
       font-weight: 500;
       padding-left: 18px;
       border-left: 2px solid lighten(color("materialize-red", "base"),10%);
-    }
-    &.active {
-      font-weight: 500;
-      padding-left: 18px;
-      border-left: 3px solid lighten(color("materialize-red", "base"),10%);
     }
   }
 }

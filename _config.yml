@@ -17,11 +17,15 @@ exclude:
 - vendor
 plugins:
 - jekyll-seo-tag
-title: "Documentation Homebridge"
+title: "Documentation Jeedom"
 description: "Ceci est la documentation, lier à la solution domotique Jeedom."
-author: "BPhoque"
-image: https://github.com/NebzHB/plugin-homebridge/raw/beta/plugin_info/homebridge_icon.png
+author: "Jeedom"
+image: https://www.jeedom.com/site/logo.png
+twitter:
+  username: Jeedom_domotic
 social:
-  name: Jeedom-Homebridge
+  name: Jeedom
   links:
-    - https://github.com/NebzHB
+    - https://twitter.com/Jeedom_domotic
+    - https://www.facebook.com/Jeedom-249936178537210/
+    - https://github.com/jeedom
