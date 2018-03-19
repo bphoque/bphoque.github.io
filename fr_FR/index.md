@@ -30,9 +30,10 @@ Siri peut aussi interagir. Il répond aux questions et fait des actions.
 
 ![siri-01](../images/siri-01.jpg) ![siri-02](../images/siri-02.jpg)
 
+Le plugin prend en charge les scénarios. Il est possible de les exécuter directement depuis l'app Maison d'Apple.
+
 HomeKit a l'avantage d'être utilisable à l'extérieur du domicile. Seule condition: il faut disposer d'un concentrateur. 
 L'iPad et l'AppleTV (et bientôt le HomePod) peuvent servir de concentrateur. Pour cela, ils doivent être connectés au même compte iCloud.
-
 
 >HomeKit est le nom officiel du protocole développé par Apple. Homebridge est son équivalent Open Source développé par nfarina. Ce dernier a étendu le projet HAP-NodeJS qui est le moteur d'Homebridge.
 
@@ -147,7 +148,7 @@ Une fois les cases *nom Homebridge et PIN Homebridge* correctement renseignées,
 
 >Un QR code est généré automatiquement. Cela améliore l'intégration du pont jeedom dans Homekit. Voir la partie "Ajout de Jeedom dans HomeKit".
 
-Ajout des accessoires dans Homebridge
+Ajout des accessoires et scénarios dans Homebridge
 ------------------------------------
 
 Les équipements seront à ajouter manuellement. 
@@ -158,8 +159,10 @@ Afin d'intégrer un accessoire dans Homebridge, il faut sélectionner la pièce 
 
 ![choix-acc](../images/choix-acc.png)
 
-Afin d'ajouter un accessoire à Homebridge, il suffit de cocher la case "Envoyer à Homebridge". Pour sauvegarder, il suffit de cliquer sur la petite disquette verte.
+![scenario](../images/scenario.png)
 
+Afin d'ajouter un accessoire ou un scénario à Homebridge, il suffit de cocher la case "Envoyer à Homebridge". Pour sauvegarder, il suffit de cliquer sur la petite disquette verte.
+Les scénarios seront créés sous forme d'interrupteurs. En l'activant, vous lancerez le scénario. En le désactivant, vous le stopperez (s'il tournait toujours). L'interrupteur reste activé tant que le scénario tourne.
 
 >Si des modifications ont été faites, comme le changement du type générique, la modification d'un paramètre, l'ajout d'un accessoire il faut impérativement redémarrer le Démon pour la prise en compte dans Homebridge.
 
@@ -211,8 +214,22 @@ Prises
 |Action/Prise<br/>Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
 |Action/Prise<br/>Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
 |Action/Prise<br/>Slider|`NON Utilisé`|N/A|
-|Action/Lumière<br/>Bouton Off|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
 
+Interrupteurs
+----------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Info/Interrupteur<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Interrupteur<br/>Bouton On|`OUI`|Réf. vers Info/Interrupteur Etat| 
+|Action/Interrupteur<br/>Bouton Off|`OUI`|Réf. vers Info/Interrupteur Etat|
+
+Bouton poussoir
+----------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Action/Bouton<br/>poussoir|`NON`|type = "Autre" dans jeedom|
 
 Volets
 --------
@@ -281,22 +298,28 @@ Haut-Parleurs (Eve Seulement)
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Haut-Parleur Mute|`OUI`|1 = Pas de son<br/>0 = Son|
+|Info/Haut-Parleur Mute|`NON`|1 = Pas de son<br/>0 = Son|
 |Action/Haut-Parleur Mute|`Si pas Toggle`|Réf. vers Info/Haut-Parleur Mute| 
 |Action/Haut-Parleur UnMute|`Si pas Toggle`|Réf. vers Info/Haut-Parleur Mute| 
 |Action/Haut-Parleur Toggle Mute|`Si seul`|Réf. vers Info/Haut-Parleur Mute|
-|Info/Haut-Parleur Volume|`NON`|%| 
-|Action/Haut-Parleur Volume|`OUI si Info/HP Volume`|Réf. vers Info/Haut-Parleur Volume| 
+|Info/Haut-Parleur Volume|`OUI`|%| 
+|Action/Haut-Parleur Volume|`OUI`|Réf. vers Info/Haut-Parleur Volume| 
 
-Interrupteur programmable
+Interrupteur programmable Multi-Valeurs
 --------
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Interrupteur programmable<br/>(multi-valeur)|`NON`|Watts|
-|Info/Interrupteur programmable "binaire"<br/>(Double Click)|`NON`|Watts|
-|Info/Interrupteur programmable "binaire"<br/>Long Click)|`NON`|Watts|
-|Info/Interrupteur programmable "binaire"<br/>Simple Click)|`NON`|Watts|
+|Info/Interrupteur programmable<br/>(multi-valeur)|`NON`|Valeurs correspondantes</br>(une colonne par bouton)<br/>Séparer par ;|
+
+Interrupteur programmable Binaires
+--------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Interrupteur programmable "binaire"<br/>(Double Click)|`NON`|Numéro du bouton<br/>pour groupage|
+|Info/Interrupteur programmable "binaire"<br/>(Long Click)|`NON`|Numéro du bouton<br/>pour groupage|
+|Info/Interrupteur programmable "binaire"<br/>(Simple Click)|`NON`|Numéro du bouton<br/>pour groupage|
 
 
 Generic
@@ -309,6 +332,7 @@ Generic
 |Info/Température|`NON`|-50→100 °C| 
 |Info/Luminosité|`NON`|0.0001→ 100000 lux| 
 |Info/Présence|`NON`|0 = Pas de mouvement<br/>1 = Mouvement|
+|Info/Occupation|`NON`|0 = Personne<br/>1 = Quelqu'un|
 |Info/Batterie|`NON`|%| 
 |Info/Batterie en charge|`NON`|0 = NON<br/>pas 0 = OUI| 
 |Info/Détection de fumée|`NON`|pas 1 = Pas de fumée détectée<br/>1 = fumée détectée| 
@@ -322,11 +346,12 @@ Generic
 |Info/Son (dB)|`NON`|Générique (Eve Seulement)
 |Info/UV|`NON`|Générique (Eve Seulement)
 |Info/Générique|`NON`|Valeur <64 charactères<br/>avec Unité indiquée ou pas<br/>(Eve Seulement)| 
-|Action/Générique<br/>(N’existe pas en HomeKit)|`NON`|N/A|
+|Action/Générique|`NON`|Type "autre"<br/>uniquement<br/><br/>Bouton poussoir|
 |Info/Pluie (accumulation)|`NON`|Générique (Eve Seulement)|
 |Info/Vent (direction)|`NON`|Générique (Eve Seulement)|
 |Info/Vent (vitesse)|`NON`|Générique (Eve Seulement)|
 |Info/Actif|`NON`|0 = inactif<br/>1 = actif|
+|Info/Online|`NON`|0 = inactif<br/>1 = actif|
 |Info/Defectueux|`NON`|0 = non<br/>1 = oui|
 
 *Des exemples de configurations sont disponibles à la fin de la documentation*
@@ -643,11 +668,46 @@ La tableau ci dessus indique les valeurs renvoyées par l'interrupteur pour chaq
 
 ![tg-inter](../images/tg-inter.png)
 
+Voici le résultat dans l'app maison : 
+
+![inter01](../images/inter01.png)
+![inter02](../images/inter02.png)
+
 Type d'accessoire : Bouton simple Click XIAOMI Aquara
 
 ![bouton-xiaomi](../images/bouton-xiaomi.png)
 
 ### Interrupteur programmable binaire #
+
+Ce type générique possède 3 options (Simple click, long click et double click). Il faut que l'accessoire possède une info par type générique. Cette action doit être binaire.
+
+Type d'accessoire : NODON Interrupteur mural ENOCEAN
+
+L'interrupteur enocean de NODON, possède 4 informations (bt1, bt2, bt3 et bt4). Chaque information est de type binaire : 
+
+![enocean](../images/enocean.png)
+
+Voici les paramètres pour cet accessoire : 
+
+![tg-bouton02](../images/tg-bouton02.png)
+
+Homebridge va créer 1 accessoires mais avec 4 boutons :
+
+![bt01](../images/bt01.png)
+
+Type d'accessoire : EDISIO interrupteur 4 boutons : 
+
+Cet accessoire possède 2 actions par bouton mais avec 2 ID binaires différents (1 ID par action).
+
+![edisio](../images/edisio.png)
+
+Voici les paramètres pour cet accessoire : 
+
+![edisio02](../images/edisio02.png)
+
+Homebridge va créer 1 accessoires, avec 4 boutons et 2 actions par boutons :
+
+![edisio03](../images/edisio03.png)
 
 Virtuel
 --------
@@ -788,18 +848,18 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
 <pre><code>{
   "platform": "Camera-ffmpeg",
   "cameras": [
-    {
-      "name": "Camera Cellier",
-      "videoConfig": {
-        "source": "-re -f mjpeg -i http://login:password@xxx.xxx.xxx.xxx/mjpeg.cgi",
-        "stillImageSource": "-f mjpeg -i http://login:password@xxx.xxx.xxx.xxx/image/jpeg.cgi",
-        "maxStreams": 2,
-        "maxWidth": 640,
-        "maxHeight": 480,
-        "maxFPS": 30,
-        "vcodec": "h264"
-      }
-    }
+	{
+	  "name": "Camera Cellier",
+	  "videoConfig": {
+		"source": "-re -f mjpeg -i http://login:password@xxx.xxx.xxx.xxx/mjpeg.cgi",
+		"stillImageSource": "-f mjpeg -i http://login:password@xxx.xxx.xxx.xxx/image/jpeg.cgi",
+		"maxStreams": 2,
+		"maxWidth": 640,
+		"maxHeight": 480,
+		"maxFPS": 30,
+		"vcodec": "h264"
+	  }
+	}
   ]
 }
 </code></pre>
@@ -840,18 +900,18 @@ Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux
 <pre><code>{
   "platform": "Camera-ffmpeg",
   "cameras": [
-    {
-      "name": "Cellier 1",
-      "videoConfig": {
-        "source": "-re -f mjpeg -i http://login:password@adresseIP/mjpeg.cgi",
-        "stillImageSource": "-f mjpeg -i http://login:password@adresseIP/image/jpeg.cgi",
-        "maxStreams": 2,
-        "maxWidth": 640,
-        "maxHeight": 480,
-        "maxFPS": 30,
-        "vcodec": "h264"
-      }
-    }
+	{
+	  "name": "Cellier 1",
+	  "videoConfig": {
+		"source": "-re -f mjpeg -i http://login:password@adresseIP/mjpeg.cgi",
+		"stillImageSource": "-f mjpeg -i http://login:password@adresseIP/image/jpeg.cgi",
+		"maxStreams": 2,
+		"maxWidth": 640,
+		"maxHeight": 480,
+		"maxFPS": 30,
+		"vcodec": "h264"
+	  }
+	}
   ]
 }
 |
@@ -1054,26 +1114,26 @@ v1.4.0 (???)
 
 * Les interrupteur programmables dans homekit font leur apparition.
 
-* Interrupteur Programmable (Multi-Valeur) (Homebridge) : 
- * Il s'agit d'un interrupteur avec une commande de type info qui contiendra plusieurs valeurs en fonction du type de click effectué. ("click", "double_click", "long_click"
+    * Interrupteur Programmable (Multi-Valeur) (Homebridge) : 
+        * Il s'agit d'un interrupteur avec une commande de type info qui contiendra plusieurs valeurs en fonction du type de click effectué. ("click", "double_click", "long_click"
 
-* Interrupteur Programmable Binaire (Simple Click) (Homebridge) : 
- * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un simple click sur le bouton.
-* Interrupteur Programmable Binaire (Double Click) (Homebridge) :
- * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un double click sur le bouton.
-* Interrupteur Programmable Binaire (Long   Click) (Homebridge) :
- * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un long click sur le bouton.
-
+    * Interrupteur Programmable Binaire (Simple Click) (Homebridge) : 
+        * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un simple click sur le bouton.
+    * Interrupteur Programmable Binaire (Double Click) (Homebridge) :
+        * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un double click sur le bouton.
+    * Interrupteur Programmable Binaire (Long   Click) (Homebridge) :
+        * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un long click sur le bouton.
+ 
 * Compatibilité (Alpha) avec Docker : (toujours aucun support) mais quelques modifications ont été faites pour faciliter l'utilisation du plugin sous Docker officiel Jeedom en mode réseau "Host".
 
 * Affichage des graphiques dans l'application Eve (support Alpha). Fonctionne pour les types suivants :
 
- * Température (chaque point de donnée est une moyenne des 10min précédentes)
- * Humidité (chaque point de donnée est une moyenne des 10min précédentes)
- * Pression (chaque point de donnée est une moyenne des 10min précédentes)
- * Porte ou Fenêtre 
- * Mouvement 
- * Puissance Electrique (chaque point de donnée est une moyenne des 10min précédentes)
+    * Température (chaque point de donnée est une moyenne des 10min précédentes)
+    * Humidité (chaque point de donnée est une moyenne des 10min précédentes)
+    * Pression (chaque point de donnée est une moyenne des 10min précédentes)
+    * Porte ou Fenêtre 
+    * Mouvement 
+    * Puissance Electrique (chaque point de donnée est une moyenne des 10min précédentes)
 
 > Il s'agit d'un support Alpha, juste car c'est fun :) Les graphiques ont été développés par ingénierie inversée des composants Elgato Eve et il peut y avoir des incohérences. Les données des graphiques sont les données collectées lorsque le démon Homebridge est démarré, il peut donc manquer certaines informations. Les graphiques sont là à titre informatif. A part les trois premiers qui peuvent être dans le même Périphérique, les autres ne peuvent pas être combinés (il faut coller aux produits Elgato).
 
@@ -1136,15 +1196,15 @@ v1.3 (30-10-2017)
 * Possibilité de personnaliser les états des Portes de Garage (Ouvert (255), En Ouverture (254), Stopé (253), En Fermeture (252), Fermé (0)) avec d'autres valeurs.
 * Les types spécifiques à Homebridge : j'ai maintenant la possibilité de créer des types spécifiques pour Homebridge, ceux-ci ne font pas partie du core (comme les types génériques) mais les complètent. Il faut néanmoins les définir manuellement dans le plugin (les types génériques restent utilisés principalement, ces types sont un ajout pour les types génériques qui n'existent pas).
 * Nouveaux types spécifiques à Homebridge : 
- * Status Defectueux (binaire : 0:non/ 1:oui -> peut-être mappé à un binaire représentant par exemple un lien mort chez Z-Wave) .
- * Status Actif (binaire : 0:non/ 1:oui -> peut-etre mappé au status "online" d'une Xiaomi Yeelight par exemple).
+    * Status Defectueux (binaire : 0:non/ 1:oui -> peut-être mappé à un binaire représentant par exemple un lien mort chez Z-Wave) .
+    * Status Actif (binaire : 0:non/ 1:oui -> peut-etre mappé au status "online" d'une Xiaomi Yeelight par exemple).
 * Haut-parleurs, il devrait fonctionner automatiquement avec le plugin Sonos par exemple (à tester), les types sont : 
- * Info/Haut-parleur Mute (binaire)
- * Info/Haut-parleur Volume (pourcentage)
- * Action/Haut-parleur Mute
- * Action/Haut-parleur Unmute
- * Action/Haut-parleur Toggle Mute (soit Toggle soit Mute/Unmute, les deux choix sont possibles séparément)
- * Action/Haut-parleur Volume (typiquement un slider)
+    * Info/Haut-parleur Mute (binaire)
+    * Info/Haut-parleur Volume (pourcentage)
+    * Action/Haut-parleur Mute
+    * Action/Haut-parleur Unmute
+    * Action/Haut-parleur Toggle Mute (soit Toggle soit Mute/Unmute, les deux choix sont possibles séparément)
+    * Action/Haut-parleur Volume (typiquement un slider)
 
 >Info/Haut-parleur Mute est obligatoire, c'est étrange mais c'est une obligation coté HomeKit.
 
@@ -1166,11 +1226,11 @@ v1.1.4
 * Bugfix : Temperature isNaN -> 0
 * pré-support Sabotage
 * Bugfix : Interdire une valeur Null ou Undefined d'être envoyée à HomeKit
-
+    
 v1.1.2
 ----
 * Support basique Alarme : besoin d'une config coté plugin pour mapper les modes NUIT, ABSENT, PRESENT avec des ALARM_SET_MODE Jeedom
-
+    
 v1.1.1
 --------
 * Bugfix : Restauration des valeurs en cache au redémarrage
@@ -1241,8 +1301,8 @@ v1.0.16
 
 >Cela signifie qu'à l'installation de cette version, vos périphériques dans Maison vont disparaitre pour réapparaitre dans la pièce par défaut (et casser vos scènes et automations).
 
- * Point positif : vous pouvez maintenant changer de pièce dans Jeedom les périphériques sans les perdre dans Maison. Malheureusement, ils ne changeront pas dans Maison (non-implémenté dans Homebridge).
- * j'ai gardé le nom du périphérique pour l'instant dans l'identifiant car le renommage d'un périphérique dans Jeedom casserait tout dans Maison (pour l'instant) de toute façon.
+    * Point positif : vous pouvez maintenant changer de pièce dans Jeedom les périphériques sans les perdre dans Maison. Malheureusement, ils ne changeront pas dans Maison (non-implémenté dans Homebridge).
+    * j'ai gardé le nom du périphérique pour l'instant dans l'identifiant car le renommage d'un périphérique dans Jeedom casserait tout dans Maison (pour l'instant) de toute façon.
 * Modification du délais d'interrogation-longue pour optimiser les systèmes avec moins de changements d'états.
 * Modification du modèle de fonctionnement. Maintenant on prend un état des périphérique au démarrage du plugin et on le met à jour en temps réel à chaque changement dans Jeedom ou Maison. Moins de requêtes sur l'API Jeedom, plus petits temps de réponse dans Maison.
 * Ajout d'un ramasse miettes à la fin de l'ajout des périphériques présent dans Jeedom à Homebridge, tout ce qui n'a pas été ajouté/modifié est supprimé d'Homebridge (si vous avez rendu invisible un périf ou supprimé dans Jeedom par exemple).
@@ -1255,6 +1315,5 @@ v1.0.16
 * Au démarrage du daemon, vérification si avahi-daemon et dbus sont bien lancés, sinon, les démarrer.
 * A l'install des dépendances, passer avahi-daemon et dbus à enabled si pas le cas.
 * Corrections diverses, simplifications et optimisations.
-
-
+    
 
