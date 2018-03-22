@@ -231,7 +231,7 @@ Bouton poussoir
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |----------------|:-----------:|------------|
-|Action/Bouton<br/>poussoir|`NON`|type = "Autre" dans jeedom|
+|Action/Bouton<br/>poussoir|`NON`|type = "Défaut" dans jeedom|
 
 Volets
 --------
@@ -711,6 +711,18 @@ Voici les paramètres pour cet accessoire :
 Homebridge va créer 1 accessoires, avec 4 boutons et 2 actions par boutons :
 
 ![edisio03](../images/edisio03.png)
+
+Bouton poussoir 
+------------------------------------------------
+
+Ce type générique est utilisé par des accessoires qui ne nécessites pas de retour d'état. Le bouton poussoir est le parfait exemple. 
+Dans cet exemple, un simple appui sur le bouton permet de lancer un script (avec le plugin script).
+
+Le BP sera crée à l'aide du plugin virtuel.
+
+![BP](../images/bp.png)
+
+Dans l'application Maison, le BP sera représenté comme un interrupteur. Un appui dessus permet le lancement du script.
 
 Virtuel
 --------
