@@ -722,6 +722,10 @@ Le BP sera crée à l'aide du plugin virtuel.
 
 ![BP](../images/bp.png)
 
+Voici les paramètres pour cet accessoire : 
+
+![TGBP](../images/tgbp.png)
+
 Dans l'application Maison, le BP sera représenté comme un interrupteur. Un appui dessus permet le lancement du script.
 
 Virtuel
