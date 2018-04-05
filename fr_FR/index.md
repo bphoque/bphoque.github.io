@@ -348,7 +348,7 @@ Generic
 |Info/Son (dB)|`NON`|Générique (Eve Seulement)
 |Info/UV|`NON`|Générique (Eve Seulement)
 |Info/Générique|`NON`|Valeur <64 charactères<br/>avec Unité indiquée ou pas<br/>(Eve Seulement)| 
-|Action/Générique|`NON`|Type "autre"<br/>uniquement<br/><br/>Bouton poussoir|
+|Action/Générique|`NON`|Type "Défaut"<br/>uniquement<br/><br/>Comme un Bouton poussoir|
 |Info/Pluie (accumulation)|`NON`|Générique (Eve Seulement)|
 |Info/Vent (direction)|`NON`|Générique (Eve Seulement)|
 |Info/Vent (vitesse)|`NON`|Générique (Eve Seulement)|
@@ -658,7 +658,7 @@ Type d'accessoire : Aeotec - Contrôleur de porte de garage (GEN5) (Z-Wave)
 
 ![garage](../images/garage.png)
 
-Interrupteur programable
+Interrupteur programmable
 -----------------------
 
 ### Interrupteur programmable multi-valeur #
@@ -716,9 +716,9 @@ Bouton poussoir
 ------------------------------------------------
 
 Ce type générique est utilisé par des accessoires qui ne nécessites pas de retour d'état. Le bouton poussoir est le parfait exemple. 
-Dans cet exemple, un simple appui sur le bouton permet de lancer un script (avec le plugin script).
+Dans cet exemple, un simple appui sur le bouton poussoir permet de lancer un script (avec le plugin script).
 
-Le BP sera crée à l'aide du plugin virtuel.
+Le Bouton poussoir sera crée à l'aide du plugin virtuel.
 
 ![BP](../images/bp.png)
 
@@ -726,7 +726,9 @@ Voici les paramètres pour cet accessoire :
 
 ![TGBP](../images/tgbp.png)
 
-Dans l'application Maison, le BP sera représenté comme un interrupteur. Un appui dessus permet le lancement du script.
+Dans l'application Maison, le Bouton poussoir sera représenté comme un interrupteur. Un appui dessus permet le lancement du script et l'interrupteur repasse à OFF (0) tout seul.
+
+>Les commandes de camera (Zoom, Dézoom, Haut, Bas, Gauche, Droite, Présets) et les Action/Générique (de type "Défaut") sont automatiquement créées comme des boutons poussoir.
 
 Virtuel
 --------
@@ -1099,10 +1101,24 @@ Les actions définies dans la partie "Réinitialisation" du plugin "Alarme" vont
 
 ![reinitialisation](../images/reinitialisation.png)
 
+
+Plugin Méteo
+---------------
+
+Le plugin météo est compatible avec les applications Maison et Eve. Cependant, dans Maison, seules la température et l'humidité sont remontées. Dans Eve, l'ensemble des informations sont disponibles.
+
+![config-meteo](../images/config-meteo.png)
+
+Pour activer le plugin météo, il suffit de cocher la case "Envoyer à Homebridge". Le configuration se fait tout seule.
+
+![meteo-eve](../images/meteo-eve.png)
+![meteo-home](../images/meteo-home.png)
+
+
 Changelog
 =========
 
-v1.4.0 (???)
+v1.4.0 (22&23-03-2018)
 -------------
 
 * Documentation au nouveau format + mise à jour par @BPhoque
@@ -1117,9 +1133,9 @@ v1.4.0 (???)
 
 * Nouveau type spécifique homebridge : "Bouton poussoir" qui est en fait un interrupteur mais qui s'éteint tout seul. Cela permet d'associer n'importe quelle commande action de type "autre".
 
-* Support du type générique Action/Générique pour les commandes action de type "autre" seulement. (Comme un Bouton poussoir).
+* Support du type générique Action/Générique pour les commandes action de type "Défaut" seulement. (Comme un Bouton poussoir).
 
-* Support des commandes camera comme bouton pousoir(Haut,Bas,Gauche,Droite,Zoom,DéZoom,Preset) et de l'enregistrement comme un interrupteur.
+* Support des commandes camera comme Bouton poussoir (Haut,Bas,Gauche,Droite,Zoom,DéZoom,Preset) et de l'enregistrement comme un interrupteur.
 
 * Meilleur gestion du type Haut-Parleur (si pas de Mute).
 
@@ -1156,7 +1172,9 @@ v1.4.0 (???)
     * Mouvement 
     * Puissance Electrique (chaque point de donnée est une moyenne des 10min précédentes)
 
-> Il s'agit d'un support Alpha, juste car c'est fun :) Les graphiques ont été développés par ingénierie inversée des composants Elgato Eve et il peut y avoir des incohérences. Les données des graphiques sont les données collectées lorsque le démon Homebridge est démarré, il peut donc manquer certaines informations. Les graphiques sont là à titre informatif. A part les trois premiers qui peuvent être dans le même Périphérique, les autres ne peuvent pas être combinés (il faut coller aux produits Elgato).
+> Il s'agit d'un support Alpha, juste car c'est fun :) Les graphiques ont été développés par ingénierie inversée des composants Elgato Eve et il peut y avoir des incohérences. Les données des graphiques sont les données collectées lorsque le démon Homebridge est démarré, il peut donc manquer certaines informations. Les graphiques sont là à titre informatif. A part les trois premiers types qui peuvent être dans le même Périphérique, les autres ne peuvent pas être combinés (il faut coller aux produits Elgato).
+
+> Pour faire apparaître les graphs, il faut des données et si vous ne voyez rien la première fois, il faut fermer complètement l'app Eve puis la réouvrir pour qu'il rafraîchisse les composants.
 
 v1.3.5 (12-12-2017)
 ------------------
