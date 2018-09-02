@@ -1,13 +1,13 @@
 Présentation Homebridge
 =======================
 
-*Le plugin Homebridge* est un demon qui permet d’interagir avec un système domotique via l’assistant vocal Siri sous iOS. Le HomeKit a été introduit depuis iOS 8, mais est véritablement opérationnel depuis iOS 10 via l’application Maison. 
+*Le plugin Homebridge* est un démon qui permet d’interagir avec un système domotique via l’assistant vocal Siri sous iOS. Le HomeKit a été introduit depuis iOS 8, mais est véritablement opérationnel depuis iOS 10 via l’application Maison. 
 
 ![homekit-logo](../images/homekit-logo.jpg)
 
 Le plugin Homebridge de Jeedom permet donc d’exposer des équipements Jeedom qui seront vus comme des accessoires compatibles au protocole *HomeKit*.
 
->Homebridge n'est pas officiellement supporté par Apple. A tout moment Apple peut bloquer ce protocole.
+>Homebridge n'est pas officiellement supporté par Apple. A tout moment, Apple peut bloquer ce protocole.
 
 Que peut-on faire avec Homebridge ?
 ---------------------------------
@@ -18,7 +18,7 @@ Depuis iOS 10, l'application Maison (inclue par défaut avec iOS) permet le pilo
 
 ![cuisine-homekit](../images/cuisine-01.png) ![cuisine-homekit](../images/salon-01.png) ![cuisine-homekit](../images/salle-de-bain-01.png)
 
-Les équipements peuvent être classés par pièce. Il est également possible de mettre des accessoires en favoris sur la pages d'accueil. Une page spécifique indique l'ensemble des états des accessoires.
+Les équipements peuvent être classés par pièce. Il est également possible de mettre des accessoires en favoris sur la page d'accueil. Une page spécifique indique l'ensemble des états des accessoires.
 
 ![piece-homekit](../images/piece-homekit.jpg) ![piece-homekit](../images/accueil-01.png) ![etat](../images/etat.png)
 
@@ -30,9 +30,11 @@ Siri peut aussi interagir. Il répond aux questions et fait des actions.
 
 ![siri-01](../images/siri-01.jpg) ![siri-02](../images/siri-02.jpg)
 
-HomeKit a l'avantage d'être utilisable à l'extérieur du domicile. Seule condition: il faut disposer d'un concentrateur. 
-L'iPad et l'AppleTV (et bientôt le HomePod) peuvent servir de concentrateur. Pour cela, ils doivent être connectés au même compte iCloud.
+Le plugin prend en charge les scénarios. Il est possible de les exécuter directement depuis l'app Maison d'Apple.
 
+HomeKit a l'avantage d'être utilisable à l'extérieur du domicile. Seule condition: il faut disposer d'un concentrateur. 
+L'iPad, l'AppleTV et le HomePod peuvent servir de concentrateur. Pour cela, ils doivent être connectés au même compte iCloud.
+>Pour un fonctionnement optimal, il est recommandé d'utiliser une AppleTV ou un Homepod en tant que concentrateur. Ces équipements étant alimentés sur secteur, ils sont beaucoup plus fiables. 
 
 >HomeKit est le nom officiel du protocole développé par Apple. Homebridge est son équivalent Open Source développé par nfarina. Ce dernier a étendu le projet HAP-NodeJS qui est le moteur d'Homebridge.
 
@@ -73,7 +75,7 @@ Les dépendances sont installées automatiquement par Jeedom dans les 5 min. Ell
 * Tout système basé sur Debian 8 ou 9
 
 
->Les installations sous Docker et Raspberry Pi 1 ne sont pas compatibles avec cette version de Homebridge.
+>Les installations sous Docker et Raspberry Pi 1 ne sont pas supportées.
 
 Une fois les dépendances installées, le démon se lance (dans les 5 min). Si le statut n'est pas sur "OK", il faut cliquer sur "(Re)Démarrer".
 
@@ -101,6 +103,8 @@ Ces fichiers peuvent être nécessaires en cas de dysfonctionnement du plugin.
 
 * Homebridge_dep : Historise toutes les étapes de l'installation des dépendances. Si le démon refuse de démarrer par exemple, un coup d'oeil peut aider).
 
+* DebugInfo : Il ne s'agit pas vraiment d'un Log mais plutot d'informations de debuggage qui peuvent aider à diagnostiquer votre problème.  Pour avoir ces informations, il faut passer les logs du démon en "Debug" ou en "Info" puis actualiser la fenêtre (F5). A côté de "Configuration" dans le plugin Homebridge, vous avez l'icone DebugInfo qui est apparue. Il vous suffit de cliquer dessus et attendre que le relevé des informations s'effectue. Vous pouvez ensuite copier tout ou bien la catégorie qui vous est demandée.
+
 Configuration du plugin Homebridge
 =================================
 
@@ -123,7 +127,7 @@ Pour créer le pont, il suffit de lui donner un nom et un code "PIN".
 * *PIN Homebridge* : Permet de personnaliser le code PIN Homebridge.
 
 
->Les PIN suivants ne sont pas acceptés par Apple : 000-00-000, 111-11-111, 222-22-222 -> 999-99-999, 123-45-678, 876-54-321. Son changement obligera la reconfiguration des applications HomeKit.
+>Les PIN suivants ne sont pas acceptés par Apple : 000-00-000, 111-11-111 -> 999-99-999, 123-45-678, 876-54-321. Son changement obligera la reconfiguration des applications HomeKit.
 
 * *Réparer* :  Permet une réparation de Homebridge en modifiant les identifiants. 
 
@@ -147,7 +151,7 @@ Une fois les cases *nom Homebridge et PIN Homebridge* correctement renseignées,
 
 >Un QR code est généré automatiquement. Cela améliore l'intégration du pont jeedom dans Homekit. Voir la partie "Ajout de Jeedom dans HomeKit".
 
-Ajout des accessoires dans Homebridge
+Ajout des accessoires et scénarios dans Homebridge
 ------------------------------------
 
 Les équipements seront à ajouter manuellement. 
@@ -158,10 +162,12 @@ Afin d'intégrer un accessoire dans Homebridge, il faut sélectionner la pièce 
 
 ![choix-acc](../images/choix-acc.png)
 
-Afin d'ajouter un accessoire à Homebridge, il suffit de cocher la case "Envoyer à Homebridge". Pour sauvegarder, il suffit de cliquer sur la petite disquette verte.
+![scenario](../images/scenario.png)
 
+Afin d'ajouter un accessoire ou un scénario à Homebridge, il suffit de cocher la case "Envoyer à Homebridge". Pour sauvegarder, il suffit de cliquer sur la petite disquette verte.
+Les scénarios seront créés sous forme d'interrupteurs. En l'activant, vous lancerez le scénario. En le désactivant, vous le stopperez (s'il tournait toujours). L'interrupteur reste activé tant que le scénario tourne.
 
->Si des modifications ont été faites, comme le changement du type générique, la modification d'un paramètre, l'ajout d'un accessoire il faut impérativement redémarrer le Démon pour la prise en compte dans Homebridge.
+>Si des modifications ont été faites, comme le changement du type générique, la modification d'un paramètre, l'ajout d'un accessoire, il faut impérativement redémarrer le Démon pour la prise en compte dans Homebridge.
 
 Configuration des types génériques
 =================================
@@ -211,8 +217,53 @@ Prises
 |Action/Prise<br/>Bouton On|`OUI`|Réf. vers Info/Prise Etat| 
 |Action/Prise<br/>Bouton Off|`OUI`|Réf. vers Info/Prise Etat|
 |Action/Prise<br/>Slider|`NON Utilisé`|N/A|
-|Action/Lumière<br/>Bouton Off|`OUI`|Réf. vers Lumière Etat :<br/>- Binaire s’il est présent<br/>- Etat sinon|
 
+Ventilateur
+----------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Info/Ventilateur<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé<br/>ou pourcentage si vitesse|
+|Action/Ventilateur<br/>Bouton On|`OUI`|Réf. vers Info/Ventilateur Etat| 
+|Action/Ventilateur<br/>Bouton Off|`OUI`|Réf. vers Info/Ventilateur Etat|
+|Action/Ventilateur<br/>Vitesse<br/>Rotation|`NON`|0-100<br/>Réf. vers Info/Ventilateur Etat|
+
+Valves
+----------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Info/Robinet<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Robinet<br/>Bouton On|`OUI`|Réf. vers Info/Robinet Etat| 
+|Action/Robinet<br/>Bouton Off|`OUI`|Réf. vers Info/Robinet Etat|
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Info/Irrigation<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Irrigation<br/>Bouton On|`OUI`|Réf. vers Info/Irrigation Etat| 
+|Action/Irrigation<br/>Bouton Off|`OUI`|Réf. vers Info/Irrigation Etat|
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Info/Valve<br/>Générique<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Valve<br/>Générique<br/>Bouton On|`OUI`|Réf. vers Info/Valve Générique Etat| 
+|Action/Valve<br/>Générique<br/>Bouton Off|`OUI`|Réf. vers Info/Valve Générique Etat|
+
+Interrupteurs
+----------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Info/Interrupteur<br/>Etat|`OUI`|0 = Eteint<br/>1 = Allumé|
+|Action/Interrupteur<br/>Bouton On|`OUI`|Réf. vers Info/Interrupteur Etat| 
+|Action/Interrupteur<br/>Bouton Off|`OUI`|Réf. vers Info/Interrupteur Etat|
+
+Bouton poussoir
+----------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|----------------|:-----------:|------------|
+|Action/Bouton<br/>poussoir|`NON`|type = "Défaut" dans jeedom|
 
 Volets
 --------
@@ -255,8 +306,8 @@ Thermostats
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
 |Info/Thermostat Etat (BINAIRE)|`NON`|0 = Eteint<br/>1 = Allumé|
-|Info/Thermostat Etat (HUMAIN)|`NON`|Générique (Eve Seulement)| 
-|Info/Thermostat Mode|`OUI si associé mode homekit`|Générique (Eve Seulement)| 
+|Info/Thermostat Etat (HUMAIN)|`NON`|| 
+|Info/Thermostat Mode|`OUI si associé mode homekit`|Valeur Mappée| 
 |Action/Thermostat Mode|`NON`|Peut être associé mode homekit|
 |Info/Thermostat Température Extérieur|`NON utilisé`|N/A
 |Info/Thermostat Température ambiante|`NON`|-50 → 100| 
@@ -281,34 +332,40 @@ Haut-Parleurs (Eve Seulement)
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Haut-Parleur Mute|`OUI`|1 = Pas de son<br/>0 = Son|
+|Info/Haut-Parleur Mute|`NON`|1 = Pas de son<br/>0 = Son|
 |Action/Haut-Parleur Mute|`Si pas Toggle`|Réf. vers Info/Haut-Parleur Mute| 
 |Action/Haut-Parleur UnMute|`Si pas Toggle`|Réf. vers Info/Haut-Parleur Mute| 
 |Action/Haut-Parleur Toggle Mute|`Si seul`|Réf. vers Info/Haut-Parleur Mute|
-|Info/Haut-Parleur Volume|`NON`|%| 
-|Action/Haut-Parleur Volume|`OUI si Info/HP Volume`|Réf. vers Info/Haut-Parleur Volume| 
+|Info/Haut-Parleur Volume|`OUI`|%| 
+|Action/Haut-Parleur Volume|`OUI`|Réf. vers Info/Haut-Parleur Volume| 
 
-Interrupteur programmable
+Interrupteur programmable Multi-Valeurs
 --------
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Interrupteur programmable<br/>(multi-valeur)|`NON`|Watts|
-|Info/Interrupteur programmable "binaire"<br/>(Double Click)|`NON`|Watts|
-|Info/Interrupteur programmable "binaire"<br/>Long Click)|`NON`|Watts|
-|Info/Interrupteur programmable "binaire"<br/>Simple Click)|`NON`|Watts|
+|Info/Interrupteur programmable<br/>(multi-valeur)|`NON`|Valeurs correspondantes</br>(une colonne par bouton)<br/>Séparer par ;|
 
+Interrupteur programmable Binaires
+--------
+
+|Type générique  | Obligatoire | Valeurs possibles |
+|---------------|:----------------:|----------------|
+|Info/Interrupteur programmable "binaire"<br/>(Double Click)|`NON`|Numéro du bouton<br/>pour groupage|
+|Info/Interrupteur programmable "binaire"<br/>(Long Click)|`NON`|Numéro du bouton<br/>pour groupage|
+|Info/Interrupteur programmable "binaire"<br/>(Simple Click)|`NON`|Numéro du bouton<br/>pour groupage|
 
 Generic
 ----------
 
 |Type générique  | Obligatoire | Valeurs possibles |
 |---------------|:----------------:|----------------|
-|Info/Puissance Electrique|`NON`|Watts|
-|Info/Consommation Electrique<br/>(cachée)|`NON`|KWh
+|Info/Puissance Electrique|`NON`|Watts (Eve Seulement)|
+|Info/Consommation Electrique|`NON`|KWh (Eve Seulement)|
 |Info/Température|`NON`|-50→100 °C| 
 |Info/Luminosité|`NON`|0.0001→ 100000 lux| 
 |Info/Présence|`NON`|0 = Pas de mouvement<br/>1 = Mouvement|
+|Info/Occupation|`NON`|0 = Personne<br/>1 = Quelqu'un|
 |Info/Batterie|`NON`|%| 
 |Info/Batterie en charge|`NON`|0 = NON<br/>pas 0 = OUI| 
 |Info/Détection de fumée|`NON`|pas 1 = Pas de fumée détectée<br/>1 = fumée détectée| 
@@ -322,11 +379,12 @@ Generic
 |Info/Son (dB)|`NON`|Générique (Eve Seulement)
 |Info/UV|`NON`|Générique (Eve Seulement)
 |Info/Générique|`NON`|Valeur <64 charactères<br/>avec Unité indiquée ou pas<br/>(Eve Seulement)| 
-|Action/Générique<br/>(N’existe pas en HomeKit)|`NON`|N/A|
+|Action/Générique|`NON`|Type "Défaut"<br/>uniquement<br/><br/>Comme un Bouton poussoir|
 |Info/Pluie (accumulation)|`NON`|Générique (Eve Seulement)|
 |Info/Vent (direction)|`NON`|Générique (Eve Seulement)|
 |Info/Vent (vitesse)|`NON`|Générique (Eve Seulement)|
 |Info/Actif|`NON`|0 = inactif<br/>1 = actif|
+|Info/Online|`NON`|0 = hors ligne<br/>1 = en ligne|
 |Info/Defectueux|`NON`|0 = non<br/>1 = oui|
 
 *Des exemples de configurations sont disponibles à la fin de la documentation*
@@ -342,7 +400,7 @@ Il existe plusieurs applications sur l'appstore compatibles HomeKit. L'applicati
 
 ![app-domicile](../images/app-domicile.jpg)
 
-Le pont peut être inclu manuellement en entrant le code PIN et en sélectionnant le pont ou automatiquement en scannant le QR code.
+Le pont peut être inclus manuellement en entrant ou scannant le code PIN et en sélectionnant le pont ou automatiquement en scannant le QR code.
 
 Ajout du pont par QR code
 -------------------------
@@ -376,7 +434,7 @@ Il faut scanner le code PIN et sélectionner le pont à inclure. Le pont Jeedom 
 
 >Le code PIN peut être également rentré manuellement en cliquant sur "Code absent ou impossible à scanner ?"
 
-
+>Les plateformes et accessoires supplémentaires doivent être inclus manuellement (pas via le QRcode)
 
 >Il n'est pas possible d'inclure le pont Jeedom sur plusieurs appareils IOS. Pour utiliser Homebridge sur plusieurs appareils IOS, il suffit de partager le domicile en suivant la procédure suivante :
 
@@ -433,10 +491,10 @@ Support
 -------
 **Merci de passer par le forum, de créer *un* sujet par demande et de lire les autres sujets s'ils ressemblent au votre (ceux créés après la sortie de ce plugin, c'est logique :-))**
 
-Point important
----------------
+Point important si multi-prise/multi-relay
+------------------------------------------
 
->Les références vers l'état dans les actions sont primordiales !! Sinon pas de lien entre l'état et ses actions possibles.
+>Les références vers l'état dans les actions sont primordiales dans le cas où vous avez un équipement avec des états semblables multiples (multi-prise, multi-relay) !! Sinon pas de lien entre l'état et ses actions liées possible.
 
 Pour un "virtuel" : 
 
@@ -455,7 +513,7 @@ FAQ
 
 ![demon-homebridge.png](../images/demon-homebridge.png)
 
->Pour inclure votre Jeedom dans HomeKit, via une application compatible (par exemple Maison ou Eve), vérifiez que votre appareil iOS est connecté au même réseau que votre Jeedom.
+>Pour inclure votre Jeedom dans HomeKit, via une application compatible (par exemple Maison ou Eve), vérifiez que votre appareil iOS est connecté au même réseau que votre Jeedom. (Il ne peut y avoir **aucun routage** entre jeedom et votre appareil iOS)
 
 ![config-pluginhb](../images/config-pluginhb.png)
 
@@ -481,7 +539,7 @@ FAQ
 
 **-> J'ai mon Homebridge qui n'exécute pas les commandes !**
 
->Il faut bien mettre à jour le plugin.
+>Il faut bien mettre à jour le plugin. Vérifiez le type générique de la commande.
 
 **-> J'ai bien le retour d'état d'un équipement mais impossible de le piloter !**
 
@@ -491,10 +549,11 @@ FAQ
 
 ![sans-reponse](../images/sans-reponse.png)
 
-1. Si vous n'avez pas de concentrateur HomeKit (iPad ou Apple TV), vérifiez que vous êtes connecté au même réseau que votre Jeedom. 
+1. Si vous n'avez pas de concentrateur HomeKit (iPad ou Apple TV), vérifiez que vous êtes connecté au même réseau que votre Jeedom. (Pas de routage)
 2. Vérifiez que le démon est activé. Si ce n'est pas le cas, redémarrez le.
 3. Relancez votre box.
 4. Si malgré tout vous avez toujours ces états, lancez une réparation.
+5. Si le problème n'est pas réglé, vous avez un problème réseau, veillez à activer IGMP Snooping, le multicast et mDNS sur tout le trajet entre Jeedom et votre iDevice et votre AppleTV/HomePod. Aucun routage entre ces trois périphériques n'est toléré.
 
 >Beaucoup d'informations se trouvent dans les logs, le prochain chapitre vous expliquera comment les analyser.
 
@@ -630,7 +689,7 @@ Type d'accessoire : Aeotec - Contrôleur de porte de garage (GEN5) (Z-Wave)
 
 ![garage](../images/garage.png)
 
-Interrupteur programable
+Interrupteur programmable
 -----------------------
 
 ### Interrupteur programmable multi-valeur #
@@ -643,11 +702,64 @@ La tableau ci dessus indique les valeurs renvoyées par l'interrupteur pour chaq
 
 ![tg-inter](../images/tg-inter.png)
 
+Voici le résultat dans l'app maison : 
+
+![inter01](../images/inter01.png)
+![inter02](../images/inter02.png)
+
 Type d'accessoire : Bouton simple Click XIAOMI Aquara
 
 ![bouton-xiaomi](../images/bouton-xiaomi.png)
 
 ### Interrupteur programmable binaire #
+
+Ce type générique possède 3 options (Simple click, long click et double click). Il faut que l'accessoire possède une info par type générique. Cette action doit être binaire.
+
+Type d'accessoire : NODON Interrupteur mural ENOCEAN
+
+L'interrupteur enocean de NODON, possède 4 informations (bt1, bt2, bt3 et bt4). Chaque information est de type binaire : 
+
+![enocean](../images/enocean.png)
+
+Voici les paramètres pour cet accessoire : 
+
+![tg-bouton02](../images/tg-bouton02.png)
+
+Homebridge va créer 1 accessoires mais avec 4 boutons :
+
+![bt01](../images/bt01.png)
+
+Type d'accessoire : EDISIO interrupteur 4 boutons : 
+
+Cet accessoire possède 2 actions par bouton mais avec 2 ID binaires différents (1 ID par action).
+
+![edisio](../images/edisio.png)
+
+Voici les paramètres pour cet accessoire : 
+
+![edisio02](../images/edisio02.png)
+
+Homebridge va créer 1 accessoires, avec 4 boutons et 2 actions par boutons :
+
+![edisio03](../images/edisio03.png)
+
+Bouton poussoir 
+------------------------------------------------
+
+Ce type générique est utilisé par des accessoires qui ne nécessites pas de retour d'état. Le bouton poussoir est le parfait exemple. 
+Dans cet exemple, un simple appui sur le bouton poussoir permet de lancer un script (avec le plugin script).
+
+Le Bouton poussoir sera crée à l'aide du plugin virtuel.
+
+![BP](../images/bp.png)
+
+Voici les paramètres pour cet accessoire : 
+
+![TGBP](../images/tgbp.png)
+
+Dans l'application Maison, le Bouton poussoir sera représenté comme un interrupteur. Un appui dessus permet le lancement du script et l'interrupteur repasse à OFF (0) tout seul.
+
+>Les commandes de camera (Zoom, Dézoom, Haut, Bas, Gauche, Droite, Présets) et les Action/Générique (de type "Défaut") sont automatiquement créées comme des boutons poussoir.
 
 Virtuel
 --------
@@ -681,6 +793,8 @@ L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge s
 
 ![plateforme-hb](../images/plateforme-hb.png)
 
+Il suffira ensuite d'ajouter les caméras configurées depuis le menu "Maison" de l'application "Maison" : sélectionner le bouton "+", puis "Ajouter un accessoire". Il faut alors scanner le code PIN Homebridge du plugin et sélectionner la caméra à ajouter (Attention, il ne faut pas scanner le QR Code sinon le message "Accessoire déjà ajouté" apparaîtra et l'ajout ne sera donc pas possible).
+
 ### Foscam C1 # 
 
 <pre><code>{
@@ -689,7 +803,7 @@ L'intégration des caméras se fait via la bouton rouge "Plateforme Homebridge s
       {
          "name":"Camera-Salon",
          "videoConfig":{
-            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:554/videoMain",
+            "source":"-rtsp_transport tcp -re -i rtsp://login:password@xxx.xxx.xxx.xxx:554/videoMain",
             "stillImageSource":"-i http://192.168.1.121:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
             "maxStreams":2,
             "maxWidth":1280,
@@ -711,7 +825,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
       {
          "name":"Son nom",
          "videoConfig":{
-            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:Portrtsp/videoMain",
+            "source":"-rtsp_transport tcp -re -i rtsp://login:password@xxx.xxx.xxx.xxx:Portrtsp/videoMain",
             "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx:Port/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
             "maxStreams":2,
             "maxWidth":1280,
@@ -727,9 +841,12 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
 ### Foscam FI9821P #
 
 <pre><code>{
+   "platform":"Camera-ffmpeg",
+   "cameras":[
+      {
          "name":"son nom",
          "videoConfig":{
-            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:Port/videoMain",
+            "source":"-rtsp_transport tcp -re -i rtsp://login:password@xxx.xxx.xxx.xxx:Port/videoMain",
             "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx:Port/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
             "maxStreams":2,
             "maxWidth":1280,
@@ -750,7 +867,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
       {
          "name":"Son nom",
          "videoConfig":{
-            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:Portrtsp/videoMain",
+            "source":"-rtsp_transport tcp -re -i rtsp://login:password@xxx.xxx.xxx.xxx:Portrtsp/videoMain",
             "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx:Port/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=login&pwd=password",
             "maxStreams":2,
             "maxWidth":1280,
@@ -761,7 +878,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
    ]
 }</code></pre>
 
-### wanscam rtsp HWXXX #
+### wanscam rtsp HW0043 #
 
 <pre><code>{
  "platform":"Camera-ffmpeg",
@@ -769,7 +886,7 @@ Remplacer les valeurs xxx.xxx.xxx.xxx par l'adresse IP de la caméra, login par 
       {
          "name":"Camera-Arrière",
          "videoConfig":{
-            "source":"-re -i rtsp://login:password@xxx.xxx.xxx.xxx:554/1",
+            "source":"-rtsp_transport tcp -re -i rtsp://login:password@xxx.xxx.xxx.xxx:554/1",
             "stillImageSource":"-i http://login:password@xxx.xxx.xxx.xxx/web/tmpfs/snap.jpg",
             "maxStreams":2,
             "maxWidth":1280,
@@ -812,20 +929,20 @@ Cette caméra deviendra officielement compatible HomeKit courant 2018.
 Son intégration dans Homebridge est néanmoins possible.
 
 <pre><code>{
-"platform": "Camera-ffmpeg",
-"cameras": [
-{
-"name": "Camera Name",
-"videoConfig": {
-"source": "-re -i http://xxx.xxx.xxx.xxx/Local_Access_Key/live/files/high/index.m3u8",
-"stillImageSource": "-i http://xxx.xxx.xxx.xxx/Local_Access_Key/live/snapshot_720.jpg",
-"maxStreams": 2,
-"maxWidth": 1280,
-"maxHeight": 720,
-"maxFPS": 30
-}
-}
-]
+    "platform": "Camera-ffmpeg",
+    "cameras": [
+        {
+        "name": "Camera Name",
+        "videoConfig": {
+            "source": "-re -i http://xxx.xxx.xxx.xxx/Local_Access_Key/live/files/high/index.m3u8",
+            "stillImageSource": "-i http://xxx.xxx.xxx.xxx/Local_Access_Key/live/snapshot_720.jpg",
+            "maxStreams": 2,
+            "maxWidth": 1280,
+            "maxHeight": 720,
+            "maxFPS": 30
+            }
+        }
+    ]
 }</code></pre>
 
 
@@ -856,28 +973,30 @@ Pour configurer plusieurs caméras, il suffit de mettre une barre entre les deux
 }
 |
 {
-"platform": "Camera-ffmpeg",
-"cameras": [
-{
-"name": "Salon 1",
-"videoConfig": {
-"source": "-re -i http://adresseip/xxxxxxx/live/files/high/index.m3u8",
-"stillImageSource": "-i http://adresseIP/xxxxxx/live/snapshot_720.jpg",
-"maxStreams": 2,
-"maxWidth": 1280,
-"maxHeight": 720,
-"maxFPS": 30
-}
-}
-]
+  "platform": "Camera-ffmpeg",
+  "cameras": [
+    {
+      "name": "Salon 1",
+      "videoConfig": {
+        "source": "-re -i http://adresseip/xxxxxxx/live/files/high/index.m3u8",
+        "stillImageSource": "-i http://adresseIP/xxxxxx/live/snapshot_720.jpg",
+        "maxStreams": 2,
+        "maxWidth": 1280,
+        "maxHeight": 720,
+        "maxFPS": 30
+      }
+    }
+  ]
 }</code></pre>
 
 **Cela est également valable pour toute autre plateforme comme le thermostat NEST par exemple.**
 
-Type Générique Custom
+
+
+Type Générique Info/Générique
 ---------------------
 
-Le type générique "Custom" permet de faire remonter n'importe quelle valeur "info" de tout type dans Homebridge. **Quelques exemples sont décris dans ce chapitre.**
+Le type générique "Info/Générique" permet de faire remonter n'importe quelle valeur "info" de tout type dans Homebridge. **Quelques exemples sont décris dans ce chapitre.**
 
 **L'information à remonter dans Homebridge ne doit pas dépasser 64 caractères.**
 
@@ -886,14 +1005,6 @@ Le type générique "Custom" permet de faire remonter n'importe quelle valeur "i
 >**Les interactions avec Siri ainsi que les automations ne sont pas possibles avec ce type générique**
 
 >**Il est n'est pas possible de renommer l'accessoire**
-
-### Utilisation avec le plugin Mode #
-
-Cela permet d'afficher l'intitulé du mode jeedom en cours.
-
-![custom-1](../images/custom-1.png)
-
-Dans ce cas, il faut attribuer le type générique "Info/Générique" au nom de commande "Mode".
 
 
 ![custom-2](../images/custom-2.png)
@@ -1020,241 +1131,50 @@ Les actions définies dans la partie "Réinitialisation" du plugin "Alarme" vont
 
 ![reinitialisation](../images/reinitialisation.png)
 
-Changelog
-=========
 
-v1.4.0 (???)
--------------
-
-* Meilleur code de génération pour le QRcode (en php).
-
-* Changement de plusieurs libellés dans la configuration du plugin.
-
-* Nouveau type spécifique homebridge : "Occupation" légèrement différent de "mouvement" dans Maison et dans Eve, il est plus clair pour par exemple afficher une présence (plutot qu'un mouvement).
-
-* Nouveau type spécifique homebridge : "Online" permettant de passer le composant en "Sans réponse" dans Maison s'il a la valeur de 0.
-
-* Nouveau type spécifique homebridge : "Bouton poussoir" qui est en fait un interrupteur mais qui s'éteint tout seul. Cela permet d'associer n'importe quelle commande action de type "autre".
-
-* Support du type générique Action/Générique pour les commandes action de type "autre" seulement. (Comme un Bouton poussoir).
-
-* Support des commandes camera comme bouton pousoir(Haut,Bas,Gauche,Droite,Zoom,DéZoom,Preset) et de l'enregistrement comme un interrupteur.
-
-* Meilleur gestion du type Haut-Parleur (si pas de Mute).
-
-* Gestion automatique pour la serrure TheKeys.
-
-* Séparation des types "Prise" et "Interrupteur".
-
-* Les prises dans Jeedom sont maintenant des vrais prises dans Homebridge.
-
-* Les scénarios Jeedom sont ajoutés en tant qu'interrupteur dans Homebridge (si sélectionné dans la configuration).
-
-* Composant "Pression" modifié pour apparaitre mieux dans Eve.
-
-* Les interrupteur programmables dans homekit font leur apparition.
-
-* Interrupteur Programmable (Multi-Valeur) (Homebridge) : 
- * Il s'agit d'un interrupteur avec une commande de type info qui contiendra plusieurs valeurs en fonction du type de click effectué. ("click", "double_click", "long_click"
-
-* Interrupteur Programmable Binaire (Simple Click) (Homebridge) : 
- * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un simple click sur le bouton.
-* Interrupteur Programmable Binaire (Double Click) (Homebridge) :
- * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un double click sur le bouton.
-* Interrupteur Programmable Binaire (Long   Click) (Homebridge) :
- * Il s'agit d'un interrupteur ou la commande de type info est un binaire et correspond à un long click sur le bouton.
-
-* Compatibilité (Alpha) avec Docker : (toujours aucun support) mais quelques modifications ont été faites pour faciliter l'utilisation du plugin sous Docker officiel Jeedom en mode réseau "Host".
-
-* Affichage des graphiques dans l'application Eve (support Alpha). Fonctionne pour les types suivants :
-
- * Température (chaque point de donnée est une moyenne des 10min précédentes)
- * Humidité (chaque point de donnée est une moyenne des 10min précédentes)
- * Pression (chaque point de donnée est une moyenne des 10min précédentes)
- * Porte ou Fenêtre 
- * Mouvement 
- * Puissance Electrique (chaque point de donnée est une moyenne des 10min précédentes)
-
-> Il s'agit d'un support Alpha, juste car c'est fun :) Les graphiques ont été développés par ingénierie inversée des composants Elgato Eve et il peut y avoir des incohérences. Les données des graphiques sont les données collectées lorsque le démon Homebridge est démarré, il peut donc manquer certaines informations. Les graphiques sont là à titre informatif. A part les trois premiers qui peuvent être dans le même Périphérique, les autres ne peuvent pas être combinés (il faut coller aux produits Elgato).
-
-v1.3.5 (12-12-2017)
-------------------
-* Suppression du besoin de sélection de l'utilisateur
-* Plus besoin que les actions réfèrent l'état auquel elles sont liées sauf si multi-prises ou multi-relay (on split)
-* QRCode pour configurer le bridge (attention, les cameras et plateformes supplémentaires doivent toujours scanner le PIN)
-* Plus jolie config
-* Afficher une erreur si l'adresse interne est en https
-* Mise à jour de Homebridge en 0.4.32 et HAP-Nodejs en 0.4.36
-
-v1.3.4 (29-11-2017)
--------------------
-* Réécriture du mode de fonctionnement des thermostats, plus logique :)
-* Accessoire supplémentaire pour installer les plugin Homebridge qui ne publient qu'un accessoire
-* Mise à jour documentation.
-* Corrections de bugs
-
-v1.3.3 (13-11-2017)
--------------------
-* Modification documentation
-* Gestion des actions Ouvrir et Fermer pour les portes de garages.
-* DebugInfo affiche maintenant le log de création d'accessoires (si celui-ci n'est pas encore tronqué)
-
-v1.3.2 (09 et 10 et 12-11-2017)
----------------------
-* Fichier fusionné pour la doc
-* Autre bug sur Inversion corrigé
-* Bug Siri "Ouvre tous les volets du salon" corrigé
-* Meilleure réparation et réinstallation
-* Documentation corrigée
-
-v1.3.1 (31-10-2017)
+Plugin "Méteo"
 ---------------
-* Bug invertBinary sur présence sans inversion
-* Mise à jour documentation
-* Compatibilité Serrure Nuki
 
-v1.3 (30-10-2017)
-------------------
-* Plugin séparé du plugin App Mobile.
-* Récupération de la configuration du plugin App Mobile s'il est installé.
-* Meilleure réparation et installation plus poussée pour éviter des problèmes divers.
-* Documentation complètement réécrite et adaptée par @bphoque, près de 60 pages A4 !!!
-* Type "Info/Générique" supporté pour les infos Jeedom de type Numérique, Binaire, Autre dans l'application Eve uniquement (pas encore disponnible dans "Maison").
+Le plugin météo est compatible avec les applications Maison et Eve. Cependant, dans Maison, seules la température et l'humidité sont remontées. Dans Eve, l'ensemble des informations sont disponibles.
 
->Ne pas modifier ce type dans Jeedom pendant que Homebridge fonctionne
+![config-meteo](../images/config-meteo.png)
 
-* Les types génériques "Info/Choc", "Info/Vent (direction)", "Info/Vent (vitesse)", "Info/Pluie (mm/h)", "Info/Pluie (accumulation)", "Info/Pression", "Info/Son (dB)" sont gérés comme des "Info/Générique" et affichés dans Eve.
-* Lumières : Fonctionnement est corrigé pour certains plugins (voir annonce forum)
-> Si vous aviez un pont Philips Hue v1, vous avez maintenant accès à HomeKit.
-* Alarme : les modes sont liables aux modes imposés d'HomeKit : Absent, Nuit, Présent, Désactivé. Fonctionne en consultation ET action.
-* Thermostat : (Fonctionne mieux dans Eve) : Température de consigne fonctionne, les modes peuvent être liés aux modes imposés d'HomeKit : Chauf., Clim.. L'asservissement se faisant dans Jeedom, le mode auto ne sert à rien dans HomeKit. Le statut est dans un champ générique (visible dans Eve) (cette façon de faire permet de lier les modes et d'avoir une fonctionnalité supplémentaire au lieu  de simplement vous montrer que votre chauffage chauffe). Le verrouillage apparait aussi dans Eve.
-* Nouveau design du plugin, simplification, plus besoin de choisir les plugins qui seront envoyés à Homebridge, le choix est maintenant par équipement.
-* Fenêtre "DebugInfo" (en niveau de log "info" ou "debug") pour donner des éléments importants de votre configuration en cas de demande d'aide sur le forum (à la demande).
-* Périphériques invisibles ajoutés à Homebridge, tant que "Envoyer dans Homebridge" est coché.
-* Temporisation des Slider des lumières et des volets et volumes, sinon toutes les valeurs sont envoyées à Jeedom, maintenant elles ne le sont que si le slider dans Maison ne bouge plus depuis 500ms.
-* Type Générique officiel Sabotage supporté (binaire).
-* Possibilité de personnaliser les états des Portes de Garage (Ouvert (255), En Ouverture (254), Stopé (253), En Fermeture (252), Fermé (0)) avec d'autres valeurs.
-* Les types spécifiques à Homebridge : j'ai maintenant la possibilité de créer des types spécifiques pour Homebridge, ceux-ci ne font pas partie du core (comme les types génériques) mais les complètent. Il faut néanmoins les définir manuellement dans le plugin (les types génériques restent utilisés principalement, ces types sont un ajout pour les types génériques qui n'existent pas).
-* Nouveaux types spécifiques à Homebridge : 
- * Status Defectueux (binaire : 0:non/ 1:oui -> peut-être mappé à un binaire représentant par exemple un lien mort chez Z-Wave) .
- * Status Actif (binaire : 0:non/ 1:oui -> peut-etre mappé au status "online" d'une Xiaomi Yeelight par exemple).
-* Haut-parleurs, il devrait fonctionner automatiquement avec le plugin Sonos par exemple (à tester), les types sont : 
- * Info/Haut-parleur Mute (binaire)
- * Info/Haut-parleur Volume (pourcentage)
- * Action/Haut-parleur Mute
- * Action/Haut-parleur Unmute
- * Action/Haut-parleur Toggle Mute (soit Toggle soit Mute/Unmute, les deux choix sont possibles séparément)
- * Action/Haut-parleur Volume (typiquement un slider)
+Pour activer le plugin météo, il suffit de cocher la case "Envoyer à Homebridge". Le configuration se fait tout seule.
 
->Info/Haut-parleur Mute est obligatoire, c'est étrange mais c'est une obligation coté HomeKit.
+![meteo-eve](../images/meteo-eve.png)
+![meteo-home](../images/meteo-home.png)
 
-v1.2.1
---------
-* Bugfix : capteurs Fenêtres
-* Bugfix : volets Somfy
-* Bugfix : Consommation Electrique qui bug sur composants Z-Wave
-* Bugfix : En chargement pour périf avec batterie
+Plugin "Mode"
+---------------------
 
-v1.2.0
--------
-* Realease Stable
+le plugin mode est auto configuré par le plugin. 
+![mode](../images/mode.png)
 
-v1.1.4
-----
-* Bugfix : unregister Accessories si on a une erreur
-* Update Homebridge & HAP-NodeJS
-* Bugfix : Temperature isNaN -> 0
-* pré-support Sabotage
-* Bugfix : Interdire une valeur Null ou Undefined d'être envoyée à HomeKit
+Dans l'app Maison, les modes sont représentés avec des interrupteurs. 
 
-v1.1.2
-----
-* Support basique Alarme : besoin d'une config coté plugin pour mapper les modes NUIT, ABSENT, PRESENT avec des ALARM_SET_MODE Jeedom
+![modehk](../images/modehk.png)
 
-v1.1.1
---------
-* Bugfix : Restauration des valeurs en cache au redémarrage
-* Bugfix : Bornage des valeurs du détecteur de lumière
+Pour activer un mode, il suffit de basculer l'interrupteur sur ON sur le mode souhaité. L'interrupteur du mode précédent, passe automatiquement sur OFF. En basculant un mode actif sur OFF, le mode précédent repasse sur ON.
 
-v1.1.0
---------
-* Support des Plateformes Homebridge en mode expert (Cameras, autre...)
-* Documentation code
-* Freeze des fonctionnalités, debugging à faire en vue de version stable
+Les modes fonctionnent avec Siri. Dans l'exemple ci dessus, les noms des modes sont les suivants : 
 
-v1.0.27
----------
-* Simplifié l'ajout/suppression des services
-* Commencé à résoudre les problèmes LightBulbs mais pas terminé
+* **1** : Je suis présent.
+* **2** : Je suis absent.
+* **3** : Nuit.
 
-v1.0.26
-----------
-* Gestion pourcentage batterie via le type générique "BATTERY"
-* Si < 20% on set un flag "LowBattery" dans Homekit pour afficher dans Maison/Eve/...
-* Gestion du "charge en cours" définit sur "non chargeable" pour l'instant car il faut voir comment on gère ca coté Jeedom
+Le plugin, ajoute automatiquement le terme "mode" avant. Ce qui donne au niveau des interrupteurs : 
+* **1** : Mode je suis présent.
+* **2** : Mode je suis absent.
+* **3** : Mode nuit.
 
-v1.0.25 
---------
-* Nettoyage du code et simplification
-* Meilleure gestion des services en cas de modification de ceux-ci (modification des types génériques)
+Si dans le nom du mode d'origine contient déjà le terme "mode" (ou "modo" en espagnol), il n'est pas ajouté.
 
-v1.0.24
-----------
-* Optimisation (on break les boucles si on a trouvé l'élément, plus rapide sur les grosses installations)
+Pour activer le mode "je suis absent" il faut demander à Siri:  "Dis Siri, Active le mode je suis absent".
 
-v1.0.23
---------
-* si un volet est ouvert à 95% afficher 100% dans Maison (usure mécanique, recalibration)
+![modesiri](../images/modesiri.png)
 
-v1.0.22
---------
-* Préparation des Sonnettes en prévision du support dans HomeKit par Apple
-
-v1.0.21
-----------
-* Corrigé la gestion des Serrures, elles fonctionnent
-*!!! si vous utilisez un iPad comme concentrateur HomeKit, pensez a désactiver Siri pour éviter à qqun de crier "siri ouvre la porte d'entrée" par la boite aux lettres (c'est arrivé !) !!!*
-
-v1.0.20
--------
-* Logs plus clairs et plus de verbosité sur la création des Characteristics
-
-v1.0.19
----------
-* Support pour les portes de garage/barrières, N'utiliser que BARRIER_STATE ou GARAGE_STATE (même traitement, états 255,254,253,252,0) et GB_TOGGLE
-
-v1.0.18
---------
-* Combiné les types OPENING et OPENING_WINDOW car c'est un même type dans Homebridge.
-* Ajout du Model (nom du type de l'eqLogic) et du Serial Number (id de l'objet + id logique) dans Homebridge.
-
-v1.0.17
---------
-* Prise en charge du niveau de debug du plugin App Mobile (il faut sauver le niveau et relancer le demon pour prise en charge)
-* Simplification du code (retiré des choses inutiles comme la création d'un serveur http)
-
-v1.0.16
---------
-* activation d'un mode debug dans la plateforme, il sera lié au status du plugin.
-* Francisation des messages du log, plus de verbosité, plus de clareté et de détails pour encore mieux vous aider en cas de problème.
-* Modification des paramètres de composition des UUID, uniquement l'id Jeedom et le nom du périphérique (la pièce Jeedom entrait en considération).
-
->Cela signifie qu'à l'installation de cette version, vos périphériques dans Maison vont disparaitre pour réapparaitre dans la pièce par défaut (et casser vos scènes et automations).
-
- * Point positif : vous pouvez maintenant changer de pièce dans Jeedom les périphériques sans les perdre dans Maison. Malheureusement, ils ne changeront pas dans Maison (non-implémenté dans Homebridge).
- * j'ai gardé le nom du périphérique pour l'instant dans l'identifiant car le renommage d'un périphérique dans Jeedom casserait tout dans Maison (pour l'instant) de toute façon.
-* Modification du délais d'interrogation-longue pour optimiser les systèmes avec moins de changements d'états.
-* Modification du modèle de fonctionnement. Maintenant on prend un état des périphérique au démarrage du plugin et on le met à jour en temps réel à chaque changement dans Jeedom ou Maison. Moins de requêtes sur l'API Jeedom, plus petits temps de réponse dans Maison.
-* Ajout d'un ramasse miettes à la fin de l'ajout des périphériques présent dans Jeedom à Homebridge, tout ce qui n'a pas été ajouté/modifié est supprimé d'Homebridge (si vous avez rendu invisible un périf ou supprimé dans Jeedom par exemple).
-* Suppression du bouton Regénérer le fichier de configuration : plus besoin, lorsqu'on sauvegarde la configuration, on regénère le fichier automatiquement et on relance le daemon.
-* Suppression du bouton Effacer le cache : plus besoin, on gère la suppression individuelle des périphériques. 
-
->Si vous avez un problème avec un périphérique malgré tout : décochez "Envoyer à Homebridge" | relancez le daemon | décochez "Envoyer à Homebridge" | relancez le daemon : il sera recréé tout proprement (et dans la pièce par défaut de Maison).
-
-* Ajout d'avertissements et de messages d'attention si on s'approche du nombre fatidique de 100 accessoires envoyés dans Homebridge (HomeKit ne supporte pas plus de 100 accessoires).
-* Au démarrage du daemon, vérification si avahi-daemon et dbus sont bien lancés, sinon, les démarrer.
-* A l'install des dépendances, passer avahi-daemon et dbus à enabled si pas le cas.
-* Corrections diverses, simplifications et optimisations.
+>Certains modes ne fonctionneront pas avec Siri, le mode Nuit et le mode Jour par exemple. Si vous demandez à Siri d'activer le mode nuit, il activera Night Shift. Vous pouvez contourner ceci en demandant explicitement : "Dis Siri, active l'interrupteur Mode Nuit" ou en associant l'interrupteur à la Scène "Bonne nuit".
 
 
-
+[Changelog](changelog.md)
+=========
