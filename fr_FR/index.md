@@ -1178,3 +1178,4 @@ Pour activer le mode "je suis absent" il faut demander à Siri:  "Dis Siri, Acti
 
 [Changelog](changelog.md)
 =========
+[Le changelog est disponible ici](/fr_FR/changelog.md)
