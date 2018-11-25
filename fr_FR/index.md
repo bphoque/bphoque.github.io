@@ -11,3 +11,5 @@ Que peut-on faire avec l'application mobile ?
 L'ensemble des interactions offert par jeedom est disponible depuis l'application mobile. Il est possible de piloter son éclairage, régler son chauffage, consulter ses températures, visionner et piloter ses caméras etc..
 
 ![presentation-2](../images/presentation-2.png)
+
+test
