@@ -28,3 +28,17 @@ Pour installer le plugin mobile, il faut se rendre sur le market depuis l'interf
 Il faut ensuite cliquer sur l'icône du market (chariot vert). Une fois dans le market, il suffit de cliquer sur l'icône "App mobile"
 
 ![installation-2](../images/installation-2.png) ![installation-3](../images/installation-3.png)
+
+Pour installer le plugin, il faut cliquer sur installation. 
+
+![installation-4](../images/installation-4.png)
+
+Une fois le plugin installé, il faut le configurer en cliquant sur le bouton "d'accord".
+
+![installation-5](../images/installation-5.png)
+
+Configuration post installation
+------------------------------
+
+
+
