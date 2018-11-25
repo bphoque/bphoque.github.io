@@ -12,4 +12,10 @@ L'ensemble des interactions offert par jeedom est disponible depuis l'applicatio
 
 ![presentation-2](../images/presentation-2.png)
 
-test
+Installation du plugin mobile 
+==============================
+
+Le plugin mobile n'est pas intégré par défaut lors de l'installation de jeedom. Il faut disposer d'un compte sur le market de jeedom pour pouvoir l'installer. Les utilisateurs disposant d'un pack Power, Ultimate ou Pro peuvent installer gratuitement le plugin.
+Les utilisateurs disposant d'un pack Community, devront s'acquitter de 4€ pour pouvoir bénéficier du plugin. 
+
+Installation depuis le mar
