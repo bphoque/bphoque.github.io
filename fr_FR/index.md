@@ -85,7 +85,24 @@ Comme expliquez précédemment, les plugins spéciaux ne nécessitent aucune con
 
 ![pluginspciaux-ps2](../images/pluginspciaux-ps2.png)
 
+Les plugins via type générique
+------------------------------
 
+La plupart des plugins peuvent être utiliser sur l'app mobile via les types génériques.
+Chaque commande (info ou action) doit être associée à un type générique.
 
+L'exemple suivant correspond au plugin Hue.
 
+![typegenerique-tg1](../images/typegenerique-tg1.png)
 
+Sur certain plugin, les types génériques sont configurés automatiquement. Si, ils ne sont pas configurés, il faut les renseigner manuellement.
+Il existe deux types de "type générique". L'action et l'info.
+L'action pourra être utilisé pour allumer une lumière par exemple alors l'info sera utilisé pour donner une température.
+
+Listes des types "info" : 
+
+![typegenerique-tg2](../images/typegenerique-tg2.png)
+
+Listes des types "actions" :
+
+![typegenerique-tg3](../images/typegenerique-tg3.png)
