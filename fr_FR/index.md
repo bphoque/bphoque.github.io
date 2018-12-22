@@ -51,3 +51,26 @@ Une fois le plugin activer, il est possible d'activer la fonction "ask" des noti
 Configuration du plugin mobile 
 ==============================
 
+Une fois le plugin installé, il faut le configurer via le menu "plugin", "communication" et "app mobile".
+
+![configuration-pm1](../images/configuration-pm1.png)
+
+La première chose à faire est de configurer le plugin. Car si un téléphone est lié au plugin avant la configuration, il va falloir régénérer la configuration (un simple clic sur un bouton suffit).
+
+![configuration-pm2](../images/configuration-pm2.png)
+
+Pour configurer le plugin, il faut cliquer sur "plugin".
+
+![configuration-pm3](../images/configuration-pm3.png)
+
+L'ensemble des plugins installés apparaissent. Certains sont compatibles nativement. Ce sont les plugin spéciaux(c'est à dire qu'il n'y a aucun manipulation à faire). Certains sont compatibles en configurant les types génériques. Enfin, certains (les plugins tiers généralement), sont non testés (cela ne veut pas dire qu'il ne sont pas compatibles, il faudra les configurer via les types génériques).
+
+>Le support ne sera pas assuré sur les plugins non testés.
+
+Les plugins spéciaux
+---------------------
+
+
+
+
+
