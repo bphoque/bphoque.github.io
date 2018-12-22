@@ -70,6 +70,21 @@ L'ensemble des plugins installés apparaissent. Certains sont compatibles native
 Les plugins spéciaux
 ---------------------
 
+Il en existe 6.
+
+* Plugin alarme
+* Plugin caméra
+* Plugin mode
+* Plugin méteo
+* Plugin thermostat
+* Plugin thermostat-netatmo
+
+![pluginspciaux-ps1](../images/pluginspciaux-ps1.png)
+
+Comme expliquez précédemment, les plugins spéciaux ne nécessitent aucune configuration, ils sont pris en charge nativement par l'app mobile. 
+
+![pluginspciaux-ps2](../images/pluginspciaux-ps2.png)
+
 
 
 
