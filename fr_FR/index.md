@@ -33,12 +33,21 @@ Pour installer le plugin, il faut cliquer sur installation.
 
 ![installation-4](../images/installation-4.png)
 
-Une fois le plugin installé, il faut le configurer en cliquant sur le bouton "d'accord".
+Une fois le plugin installé, il faut le configurer en cliquant sur le bouton "D'accord".
 
 ![installation-5](../images/installation-5.png)
 
 Configuration post installation
 ------------------------------
 
+Après l'installation du plugin, il faut l'activer en cliquant sur "Activer". 
 
+![configuration-p1](../images/configuration-p1.png)
+
+Une fois le plugin activer, il est possible d'activer la fonction "ask" des notifications en cliquant sur la coche associée.
+
+![configuration-p2](../images/configuration-p2.png)
+
+Configuration du plugin mobile 
+==============================
 
