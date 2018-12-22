@@ -107,7 +107,7 @@ Listes des types "actions" :
 
 ![typegenerique-tg3](../images/typegenerique-tg3.png)
 
-##Tableaux des templates de l’application #
+## Tableaux des templates de l’application #
 
 ### Les Lumières #
 
@@ -180,7 +180,7 @@ Image                                       | type générique               | P
 
 Image                               | type générique               | Partie Dev plugin            | Description          |
 :---------------------------------: | :--------------------------- | :--------------------------- | :------------------: |
-![HEATING](../images/HEATING.jpg)   | `Chauffage fil pilote Bouton ON`<br/>`Chauffage fil pilote bouton OFF`<br/>`Chauffage fil pilote Etat`<br/>`Chauffage fil pilote bouton`(optionnel) | `HEATING_ON`<br/>`HEATING_OFF`<br/>`HEATING_STATE`<br/>`HEATING_OTHER`|Les boutons ON/OFF et Etat permette de créer le bouton tout à gauche du template et les `chauffage fil pilote Bouton`sont là pour rajouter des boutons (5 max)
+![HEATING](../images/HEATING.png)   | `Chauffage fil pilote Bouton ON`<br/>`Chauffage fil pilote bouton OFF`<br/>`Chauffage fil pilote Etat`<br/>`Chauffage fil pilote bouton`(optionnel) | `HEATING_ON`<br/>`HEATING_OFF`<br/>`HEATING_STATE`<br/>`HEATING_OTHER`|Les boutons ON/OFF et Etat permette de créer le bouton tout à gauche du template et les `chauffage fil pilote Bouton`sont là pour rajouter des boutons (5 max)
 
 ### Générique Action #
 
